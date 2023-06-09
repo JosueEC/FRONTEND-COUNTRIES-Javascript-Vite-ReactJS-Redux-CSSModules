@@ -3,9 +3,12 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import { ROUTES } from './utils/constants'
 
+import ToolBar from './components/ToolBar/ToolBar'
+
 function App () {
   return (
     <main>
+      <ToolBar />
       <Routes>
         <Route
           path={ROUTES.LANDING}

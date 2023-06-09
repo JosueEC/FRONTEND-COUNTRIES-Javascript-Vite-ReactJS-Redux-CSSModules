@@ -1,0 +1,37 @@
+.containerNavbar {
+  padding-bottom: 70px;
+}
+
+.toolbar {
+  /* border: solid 2px greenyellow; */
+  position: fixed;
+  width: 100vw;
+  height: 50px;
+  background-color: var(--element-black);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 2rem;
+  font-family: var(--paragraph-font);
+  font-size: 1.15rem;
+}
+
+.containerNavbar .toolbar .burger {
+  font-size: 1.5rem;
+  color: var(--principal-color);
+  transition: 0.3s;
+}
+
+.containerNavbar .toolbar .burger:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.containerNavbar .toolbar .title {
+  transition: 0.3s;
+}
+
+.containerNavbar .toolbar .title:hover {
+  color: var(--principal-color);
+  cursor: pointer;
+}

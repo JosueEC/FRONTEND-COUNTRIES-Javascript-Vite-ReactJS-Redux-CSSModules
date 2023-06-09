@@ -3,10 +3,8 @@
 :root {
   --low-black: #151515;
   --element-black: #202020;
-  /* --principal-text: #666; */
-  --gray: #3A4F50;
   --low-gray: #4f6b6d;
-  --principal-color: #00080b;
+  --principal-color: #3a0ca3;
   --white: #fff;
 
   --text: #565360;
@@ -14,8 +12,8 @@
   --disabled: #E1DFE9;
 
   --title-font: 'Khand', sans-serif;
-  --paragraph-font: 'Hind', sans-serif;
-  --button-font: 'Loto', sans-serif;
+  --paragraph-font: 'Lato', sans-serif;
+  --button-font: 'Hindi', sans-serif;
 }
 
 * {
@@ -32,6 +30,8 @@ html {
 }
 
 body {
+  color: var(--white);
+  font-family: var(--button-font);
   background-color: var(--low-black);
 }
 
