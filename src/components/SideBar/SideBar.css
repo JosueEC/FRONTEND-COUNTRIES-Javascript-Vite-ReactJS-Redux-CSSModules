@@ -1,0 +1,59 @@
+.sidebar {
+  position: absolute;
+  z-index: 1;
+  background-color: var(--element-black);
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  transform: translateX(-100%);
+  transition: all 0.45s;
+  font-family: var(--paragraph-font);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .burger {
+  font-size: 1.3rem;
+  color: var(--principal-color);
+  transition: 0.3s;
+}
+
+.sidebar .burger:hover {
+  color: var(--white);
+}
+
+.sidebar .link {
+  color: var(--white);
+  padding: 1rem 2.5rem;
+  border-bottom: solid rgba(255, 255, 255, 0.1) 1px;
+  transition: 0.3s;
+}
+
+.sidebar .link:hover {
+  padding-left: 50px;
+  background-color: var(--principal-color);
+}
+
+.sidebar li {
+  list-style: none;
+  padding: 1rem 2.5rem;
+  border-bottom: solid rgba(255, 255, 255, 0.1) 1px;
+  transition: 0.3s;
+}
+
+.sidebar li:hover {
+  padding-left: 50px;
+  background-color: var(--principal-color);
+}
+
+.sidebar label {
+  font-size: 1.6rem;
+  padding-left: 0.5rem;
+}
+
+.sidebar--open {
+  transform: translate(0%);
+}
