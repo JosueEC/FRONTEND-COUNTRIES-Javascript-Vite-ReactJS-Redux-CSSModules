@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 import { ROUTES } from './utils/constants'
 
 import Landing from './pages/Landing/Landing'
+import Home from './pages/Home/Home'
 
 import ToolBar from './components/ToolBar/ToolBar'
 import SideBar from './components/SideBar/SideBar'
@@ -29,7 +30,7 @@ function App () {
         />
         <Route
           path={ROUTES.HOME}
-          element={<h2>Home</h2>}
+          element={<Home />}
         />
         <Route
           path={ROUTES.DETAIL}
