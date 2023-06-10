@@ -1,0 +1,77 @@
+.card {
+  /* border: solid 2px blue; */
+  width: 280px;
+  height: 360px;
+  background-color: var(--element-black);
+  border-radius: 0.3rem;
+  animation: fadeIn 1s ease 0s 1 normal forwards;
+  color: var(--low-white);
+}
+
+.card .containerImage img {
+  width: 280px;
+  border-radius: 0.3rem;
+}
+
+.card .content {
+  /* border: solid 2px red; */
+  padding: 0.5rem 1rem;
+}
+
+.card .content .title {
+  /* border: solid 2px yellowgreen; */
+  font-family: var(--button-font);
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  transition: 0.3s;
+}
+
+.card .content .title:hover {
+  color: var(--label);
+  padding-left: 0.3rem;
+}
+
+.card .content p {
+  /* border: solid 2px yellow; */
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  color: var(--label);
+  font-family: var(--button-font);
+  font-size: 1rem;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
+  border-bottom: solid 1px var(--label);
+  transition: 0.3s;
+}
+
+.card .content p:hover {
+  padding-left: 0.6rem;
+  padding-right: 0.8rem;
+}
+
+.card .content button {
+  margin-top: 0.2rem;
+  border: none;
+  background: transparent;
+  color: var(--white);
+  transition: 0.3s;
+}
+
+.card .content button:hover {
+  color: var(--secondary-color);
+  cursor: pointer;
+  padding-left: 0.3rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
