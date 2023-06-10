@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { ROUTES } from './utils/constants'
 
+import Landing from './pages/Landing/Landing'
+
 import ToolBar from './components/ToolBar/ToolBar'
 import SideBar from './components/SideBar/SideBar'
 import Backdrop from './components/Backdrop/Backdrop'
@@ -23,7 +25,7 @@ function App () {
       <Routes>
         <Route
           path={ROUTES.LANDING}
-          element={<h2>Landing Page</h2>}
+          element={<Landing />}
         />
         <Route
           path={ROUTES.HOME}

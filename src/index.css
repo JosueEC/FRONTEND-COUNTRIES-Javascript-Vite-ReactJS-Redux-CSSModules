@@ -5,7 +5,10 @@
   --element-black: #202020;
   --low-gray: #4f6b6d;
   --principal-color: #3a0ca3;
+  --secondary-color: #9932cc;
+  --degraded-background: linear-gradient(to right, var(--principal-color), var(--secondary-color));
   --white: #fff;
+  --low-white: #e4e4e4;
 
   --text: #565360;
   --label: #908E9B;
@@ -27,12 +30,14 @@
 html {
   font-size: 90%;
   overflow-x: hidden; /* Establece lo que se muestra cuando el contenido desborda los bordes izquiero o derecho. hidden establece que no el contenido desbordado se recorta*/
+  /* overflow-y: hidden; */
 }
 
 body {
   color: var(--white);
   font-family: var(--button-font);
-  background-color: var(--low-black);
+  /* background-color: var(--low-black); */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1480' height='670' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1010%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(21%2c 21%2c 21%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c480.14C89.288%2c488.853%2c165.805%2c423.76%2c243.424%2c378.776C324.741%2c331.649%2c424.574%2c297.22%2c463.349%2c211.605C502.105%2c126.032%2c479.942%2c22.922%2c443.878%2c-63.82C412.171%2c-140.08%2c330.89%2c-177.447%2c275.955%2c-239.116C222.033%2c-299.648%2c194.097%2c-381.81%2c124.132%2c-422.756C43.95%2c-469.681%2c-53.457%2c-511.749%2c-142.038%2c-483.738C-230.472%2c-455.774%2c-284.698%2c-364.86%2c-324.254%2c-280.968C-357.948%2c-209.509%2c-335.205%2c-128.012%2c-346.628%2c-49.838C-358.088%2c28.584%2c-417.19%2c103.808%2c-391.432%2c178.761C-365.416%2c254.464%2c-278.122%2c285.237%2c-214.695%2c334.072C-144.693%2c387.969%2c-87.929%2c471.56%2c0%2c480.14' fill='%23111111'%3e%3c/path%3e%3cpath d='M1440 1153.469C1551.93 1158.241 1583.099 988.556 1669.885 917.7080000000001 1742.9270000000001 858.0799999999999 1868.325 859.255 1906.183 772.899 1944.0810000000001 686.45 1880.983 590.719 1852.715 500.65999999999997 1828.82 424.533 1788.958 359.653 1753.967 287.946 1704.982 187.56099999999998 1710.354 34.551000000000045 1605.926-5.091000000000008 1503.982-43.789999999999964 1406.003 66.67599999999999 1310.71 119.67899999999997 1235.2350000000001 161.659 1171.976 214.38299999999998 1107.6770000000001 272.041 1033.6190000000001 338.45 924.188 385.456 905.389 483.135 886.595 580.788 954.577 675.076 1014.895 754.139 1067.071 822.53 1159.6779999999999 839.735 1222.375 898.631 1305.476 976.693 1326.088 1148.613 1440 1153.469' fill='%23191919'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1010'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
 }
 
 section {
@@ -40,6 +45,7 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  border: solid 2px red;
+  min-height: 100%;
+  padding: 0 8rem;
+  /* border: solid 2px red; */
 }
