@@ -18,20 +18,24 @@
 
 .containerNavbar .toolbar .burger {
   font-size: 1.5rem;
-  color: var(--principal-color);
+  color: var(--secondary-color);
   transition: 0.3s;
 }
 
 .containerNavbar .toolbar .burger:hover {
-  transform: scale(1.1);
+  color: var(--white);
   cursor: pointer;
 }
 
 .containerNavbar .toolbar .title {
   transition: 0.3s;
+  background: var(--degraded-background);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .containerNavbar .toolbar .title:hover {
-  color: var(--principal-color);
+  color: var(--white);
   cursor: pointer;
 }
