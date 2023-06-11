@@ -1,6 +1,9 @@
+import { useEffect, useState } from 'react'
+
 import { Link } from 'react-router-dom'
 import styles from './CardCountry.module.css'
-import { useEffect, useState } from 'react'
+
+import TagCountry from '../TagCountry/TagCountry'
 
 export default function CardCountry () {
   const [country, setCountry] = useState(null)
@@ -29,14 +32,13 @@ export default function CardCountry () {
             </div>
             <div className={styles.content}>
               <h3 className={styles.title}>{country.name}</h3>
-              <p><span>Region:</span>{country.region}</p>
-              <p><span>Capital:</span>{country.capital}</p>
-              <p><span>Population:</span>{country.population}</p>
-              <p><span>Continent:</span>{country.continent}</p>
+              <TagCountry tagName='Region' tagData={country.region} />
+              <TagCountry tagName='Capital' tagData={country.capital} />
+              <TagCountry tagName='Population' tagData={country.population} />
+              <TagCountry tagName='Continent' tagData={country.continent} />
               <button>Click to see more details...</button>
             </div>
           </div>
-
           )
         : (
           <h2>Loading...</h2>
