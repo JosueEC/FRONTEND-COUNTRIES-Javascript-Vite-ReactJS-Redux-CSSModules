@@ -6,7 +6,7 @@ export default function CardCountry () {
   const [country, setCountry] = useState(null)
 
   useEffect(() => {
-    fetch('http://localhost:3001/countries/COL')
+    fetch('http://localhost:3001/countries/MDG')
       .then((response) => {
         if (!response.ok) throw new Error(`Error HTTP: ${response.status}`)
         return response.json()
@@ -28,11 +28,11 @@ export default function CardCountry () {
               <img src={country.image} alt='country flag' />
             </div>
             <div className={styles.content}>
-              <h3 className={styles.title}>Mexico</h3>
-              <p><span>Region:</span>americas</p>
-              <p><span>Capital:</span>mexico city</p>
-              <p><span>Population:</span>128932753</p>
-              <p><span>Continent:</span>north america</p>
+              <h3 className={styles.title}>{country.name}</h3>
+              <p><span>Region:</span>{country.region}</p>
+              <p><span>Capital:</span>{country.capital}</p>
+              <p><span>Population:</span>{country.population}</p>
+              <p><span>Continent:</span>{country.continent}</p>
               <button>Click to see more details...</button>
             </div>
           </div>
