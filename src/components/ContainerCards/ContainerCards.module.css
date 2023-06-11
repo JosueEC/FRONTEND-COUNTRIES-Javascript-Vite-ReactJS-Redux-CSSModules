@@ -1,0 +1,13 @@
+.containerCards {
+  /* border: solid 2px greenyellow; */
+  width: 100%;
+}
+
+.containerCards .contentBox {
+  /* border: solid 2px purple; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.7rem;
+}

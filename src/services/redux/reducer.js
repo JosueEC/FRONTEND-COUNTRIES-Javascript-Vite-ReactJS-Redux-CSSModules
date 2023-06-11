@@ -13,6 +13,10 @@ const rootReducer = (state = initialState, action) => {
         countries: action.payload,
         auxCountries: action.payload
       }
+    default:
+      return {
+        ...state
+      }
   }
 }
 

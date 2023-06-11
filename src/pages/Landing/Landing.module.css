@@ -26,6 +26,10 @@
   /* font-weight: 50; */
 }
 
+.containerLanding .content .slogan {
+  color: var(--text);
+}
+
 .containerLanding .containerImage {
   /* border: solid 2px blue; */
   animation: fadeIn 1s ease 0s 1 normal forwards;

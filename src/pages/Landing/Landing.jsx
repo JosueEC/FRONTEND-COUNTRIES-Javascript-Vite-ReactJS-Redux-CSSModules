@@ -12,7 +12,7 @@ export default function Landing () {
     <section className={styles.containerLanding}>
       <div className={styles.content}>
         <h3 className={styles.title}>FLAGS OF THE WORLD</h3>
-        <p>Discover the flags of the world!</p>
+        <p className={styles.slogan}>Discover the flags of the world!</p>
         <p>Explore the 250 world flags. Filter by name, population, continent and even create tourist activities in many of them.</p>
         <Link to={ROUTES.HOME}><ButtonAction textButton='Lets Start!' /></Link>
       </div>
