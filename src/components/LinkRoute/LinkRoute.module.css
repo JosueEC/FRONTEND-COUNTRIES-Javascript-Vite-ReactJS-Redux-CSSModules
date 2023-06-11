@@ -1,0 +1,12 @@
+.link {
+  color: var(--low-white);
+  padding: 1rem 2.5rem;
+  border-bottom: solid rgba(255, 255, 255, 0.1) 1px;
+  transition: 0.3s;
+}
+
+.link:hover {
+  padding-left: 50px;
+  background: var(--degraded-background);
+  color: var(--white);
+}
