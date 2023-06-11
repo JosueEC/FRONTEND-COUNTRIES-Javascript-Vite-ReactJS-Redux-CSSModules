@@ -34,25 +34,6 @@
   padding-left: 0.3rem;
 }
 
-.card .content p {
-  /* border: solid 2px yellow; */
-  display: flex;
-  justify-content: space-between;
-  text-transform: capitalize;
-  color: var(--label);
-  font-family: var(--button-font);
-  font-size: 1rem;
-  padding-bottom: 0.3rem;
-  margin-bottom: 0.5rem;
-  border-bottom: solid 1px var(--label);
-  transition: 0.3s;
-}
-
-.card .content p:hover {
-  padding-left: 0.6rem;
-  padding-right: 0.8rem;
-}
-
 .card .content button {
   margin-top: 0.2rem;
   border: none;
