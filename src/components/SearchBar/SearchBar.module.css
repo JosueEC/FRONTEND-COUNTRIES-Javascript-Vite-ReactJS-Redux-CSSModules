@@ -1,0 +1,59 @@
+.containerSearchbar {
+  /* border: solid 2px orange; */
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
+  margin: 1rem 0;
+  animation: fadeIn 1s ease 0s 1 normal forwards;
+}
+
+.containerSearchbar .searchInput {
+  background-color: var(--element-black);
+  width: 700px;
+  height: 33px;
+  color: var(--white);
+  border-radius: 0.3rem;
+  font-size: 1.1rem;
+  font-family: var(--paragraph-font);
+  padding: 1rem;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  transition: 0.3s;
+}
+
+.containerSearchbar .searchInput:focus {
+  border: solid 2px var(--principal-color);
+}
+
+.containerSearchbar .button {
+  margin-left: 1rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.3rem;
+  background-color: var(--element-black);
+  font-family: var(--button-font);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--low-white);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  transition: 0.4rem;
+}
+
+.containerSearchbar .button:hover {
+  background-color: var(--low-gray);
+  color: var(--white);
+}
+
+.containerSearchbar .button:focus {
+  border: solid 2px var(--principal-color);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
