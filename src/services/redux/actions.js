@@ -3,6 +3,8 @@ import { API } from '../../utils/constants'
 export const GET_COUNTRIES = 'GET_COUNTRIES'
 export const GET_COUNTRIES_BY_NAME = 'GET_COUNTRIES_BY_NAME'
 export const FILTER_COUNTRIES_BY_CONTINENT = 'FILTER_COUNTRIES_BY_CONTINENT'
+export const ORDER_COUNTRIES_HIGHER_POPULATION = 'ORDER_COUNTRIES_HIGHER_POPULATION'
+export const ORDER_COUNTRIES_LOWER_POPULATION = 'ORDER_COUNTRIES_LOWER_POPULATION'
 
 const getCountries = () => {
   const URL = `${API.DOMAIN}/countries`
@@ -47,8 +49,24 @@ const filterCountriesByContinent = (continent) => {
   }
 }
 
+const orderCountriesHigherPopulation = () => {
+  return function (dispatch) {
+    console.info('order-countries-high-population')
+    dispatch({ type: ORDER_COUNTRIES_HIGHER_POPULATION })
+  }
+}
+
+const orderCountriesLowerPopulation = () => {
+  return function (dispatch) {
+    console.info('order_countries-low-population')
+    dispatch({ type: ORDER_COUNTRIES_LOWER_POPULATION })
+  }
+}
+
 export {
   getCountries,
   getCountriesByName,
-  filterCountriesByContinent
+  filterCountriesByContinent,
+  orderCountriesHigherPopulation,
+  orderCountriesLowerPopulation
 }

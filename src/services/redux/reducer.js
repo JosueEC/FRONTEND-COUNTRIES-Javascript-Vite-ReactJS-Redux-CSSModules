@@ -1,4 +1,4 @@
-import { GET_COUNTRIES, GET_COUNTRIES_BY_NAME, FILTER_COUNTRIES_BY_CONTINENT } from './actions'
+import { GET_COUNTRIES, GET_COUNTRIES_BY_NAME, FILTER_COUNTRIES_BY_CONTINENT, ORDER_COUNTRIES_HIGHER_POPULATION, ORDER_COUNTRIES_LOWER_POPULATION } from './actions'
 
 const initialState = {
   countries: [],
@@ -22,6 +22,16 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         countries: [...state.auxCountries].filter((country) => country.continent === action.payload)
+      }
+    case ORDER_COUNTRIES_HIGHER_POPULATION:
+      return {
+        ...state,
+        countries: [...state.auxCountries].sort((a, b) => b.population - a.population)
+      }
+    case ORDER_COUNTRIES_LOWER_POPULATION:
+      return {
+        ...state,
+        countries: [...state.auxCountries].sort((a, b) => a.population - b.population)
       }
     default:
       return {
