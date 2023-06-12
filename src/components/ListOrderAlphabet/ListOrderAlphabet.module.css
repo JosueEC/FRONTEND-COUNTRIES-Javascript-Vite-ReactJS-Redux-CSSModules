@@ -1,0 +1,12 @@
+.selectAlphabet {
+  font-size: 1.1rem;
+  width: 180px;
+  font-family: var(--button-font);
+  font-weight: bold;
+  text-align: center;
+  background-color: var(--element-black);
+  color: var(--low-white);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
