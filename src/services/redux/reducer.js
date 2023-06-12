@@ -1,4 +1,4 @@
-import { GET_COUNTRIES, GET_COUNTRIES_BY_NAME } from './actions'
+import { GET_COUNTRIES, GET_COUNTRIES_BY_NAME, FILTER_COUNTRIES_BY_CONTINENT } from './actions'
 
 const initialState = {
   countries: [],
@@ -17,6 +17,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         countries: action.payload
+      }
+    case FILTER_COUNTRIES_BY_CONTINENT:
+      return {
+        ...state,
+        countries: [...state.auxCountries].filter((country) => country.continent === action.payload)
       }
     default:
       return {
