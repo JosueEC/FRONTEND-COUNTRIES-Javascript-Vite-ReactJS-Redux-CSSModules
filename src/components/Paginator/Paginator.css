@@ -1,7 +1,25 @@
 .containerPaginator {
+  /* border: solid 1px purple; */
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  padding: 1rem;
 }
 
-.active {
-  background-color: purple;
+.paginatorItem {
+  background-color: var(--element-black);
+  width: 33px;
+  margin: 0 0.4rem;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  color: var(--low-white);
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: var(--button-font);
+  cursor: pointer;
+}
+
+.paginatorItem--active {
+  background-color: var(--secondary-color);
 }
