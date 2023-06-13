@@ -1,0 +1,7 @@
+.containerPaginator {
+  display: flex;
+}
+
+.active {
+  background-color: purple;
+}
