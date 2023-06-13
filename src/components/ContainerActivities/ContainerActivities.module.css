@@ -1,0 +1,28 @@
+.containerCards {
+  /* border: solid 2px purple; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.containerCards .cardActivity {
+  /* border: solid 2px orange; */
+  background-color: var(--element-black);
+  border-radius: 0.3rem;
+  width: 280px;
+  height: 317px;
+  text-align: center;
+}
+
+.containerCards .cardActivity .content .tags {
+  padding: 1rem;
+}
+
+.containerCards .cardActivity .content .bannerActivity {
+  /* border: solid 2px red; */
+  /* background-color: green; */
+  padding: 0.7rem 0;
+  font-weight: bold;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+}

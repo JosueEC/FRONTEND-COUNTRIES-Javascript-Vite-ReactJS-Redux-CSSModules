@@ -1,18 +1,19 @@
 .containerDetails {
-  /* border: solid 2px greenyellow; */
+  border: solid 2px greenyellow;
   padding: 1rem;
   display: flex;
-  background-color: var(--element-black);
   border-radius: 0.3rem;
   gap: 2rem;
 }
 
 .containerDetails .countryInformation {
   /* border: solid 2px purple; */
+  background-color: var(--element-black);
+  border-radius: 0.3rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: first baseline;
 }
 
 .containerDetails .countryInformation .content {
