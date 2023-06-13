@@ -1,0 +1,21 @@
+.containerDetails {
+  /* border: solid 2px greenyellow; */
+  padding: 1rem;
+  display: flex;
+  background-color: var(--element-black);
+  border-radius: 0.3rem;
+  gap: 2rem;
+}
+
+.containerDetails .countryInformation {
+  /* border: solid 2px purple; */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.containerDetails .countryInformation .content {
+  /* border: solid 2px gold; */
+  margin-top: 1rem;
+}

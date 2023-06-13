@@ -6,7 +6,7 @@ import TagCountry from '../TagCountry/TagCountry'
 
 export default function CardCountry ({ id, name, region, capital, population, continent, image }) {
   return (
-    <Link to='/detail/MEX' className={styles.linkCard} key={id}>
+    <Link to={`/detail/${id}`} className={styles.linkCard} key={id}>
       <div className={styles.card}>
         <FlagCountry imageFlag={image} nameCountry={name} />
         <div className={styles.content}>

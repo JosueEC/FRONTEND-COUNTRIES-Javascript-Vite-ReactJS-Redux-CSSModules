@@ -6,6 +6,7 @@ import { ROUTES } from './utils/constants'
 
 import Landing from './pages/Landing/Landing'
 import Home from './pages/Home/Home'
+import Details from './pages/Details/Details'
 
 import ToolBar from './components/ToolBar/ToolBar'
 import SideBar from './components/SideBar/SideBar'
@@ -34,7 +35,7 @@ function App () {
         />
         <Route
           path={ROUTES.DETAIL}
-          element={<h2>Detail</h2>}
+          element={<Details />}
         />
         <Route
           path={ROUTES.FORM}
