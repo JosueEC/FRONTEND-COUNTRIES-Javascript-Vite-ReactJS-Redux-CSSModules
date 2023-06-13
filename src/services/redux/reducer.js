@@ -26,17 +26,17 @@ const rootReducer = (state = initialState, action) => {
     case ORDER_COUNTRIES_HIGHER_POPULATION:
       return {
         ...state,
-        countries: [...state.auxCountries].sort((a, b) => b.population - a.population)
+        countries: [...state.countries].sort((a, b) => b.population - a.population)
       }
     case ORDER_COUNTRIES_LOWER_POPULATION:
       return {
         ...state,
-        countries: [...state.auxCountries].sort((a, b) => a.population - b.population)
+        countries: [...state.countries].sort((a, b) => a.population - b.population)
       }
     case ORDER_COUNTRIES_A_TO_Z:
       return {
         ...state,
-        countries: [...state.auxCountries].sort((a, b) => {
+        countries: [...state.countries].sort((a, b) => {
           if (a.name > b.name) return 1
           if (a.name < b.name) return -1
           return 0
@@ -45,7 +45,7 @@ const rootReducer = (state = initialState, action) => {
     case ORDER_COUNTRIES_Z_TO_A:
       return {
         ...state,
-        countries: [...state.auxCountries].sort((a, b) => {
+        countries: [...state.countries].sort((a, b) => {
           if (a.name < b.name) return 1
           if (a.name > b.name) return -1
           return 0
