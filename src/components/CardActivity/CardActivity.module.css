@@ -5,6 +5,7 @@
   width: 280px;
   height: 317px;
   text-align: center;
+  cursor: pointer;
 }
   
 .cardActivity .content .tags {
@@ -18,4 +19,5 @@
   font-weight: bold;
   border-bottom-left-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
+  text-transform: uppercase;
 }
