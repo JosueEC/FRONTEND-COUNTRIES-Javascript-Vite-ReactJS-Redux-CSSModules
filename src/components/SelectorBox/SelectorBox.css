@@ -1,12 +1,13 @@
 .box-selector {
   background-color: var(--element-black);
   border-radius: 0.3rem;
-  width: 100px;
-  height: 75px;
+  width: 120px;
+  height: 130px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .box-selector:hover {
@@ -16,6 +17,15 @@
 .box-selector img {
   width: 90px;
   height: 50px;
+  margin-bottom: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+.box-selector span {
+  text-transform: capitalize;
+  font-family: var(--paragraph-font);
+  font-weight: bold;
+  color: var(--label);
 }
 
 .box-selector--selected {
