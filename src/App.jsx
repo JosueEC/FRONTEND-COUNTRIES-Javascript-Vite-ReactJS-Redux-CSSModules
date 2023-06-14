@@ -7,6 +7,7 @@ import { ROUTES } from './utils/constants'
 import Landing from './pages/Landing/Landing'
 import Home from './pages/Home/Home'
 import Details from './pages/Details/Details'
+import FormNewActivity from './pages/FormNewActivity/FormNewActivity'
 
 import ToolBar from './components/ToolBar/ToolBar'
 import SideBar from './components/SideBar/SideBar'
@@ -39,7 +40,7 @@ function App () {
         />
         <Route
           path={ROUTES.FORM}
-          element={<h2>Form</h2>}
+          element={<FormNewActivity />}
         />
       </Routes>
     </main>
