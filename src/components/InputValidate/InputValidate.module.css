@@ -1,7 +1,8 @@
 .inputBox {
-  border: solid 2px purple;
+  /* border: solid 2px purple; */
   position: relative;
   padding-left: 1rem;
+  padding-right: 1rem;
   padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
@@ -9,7 +10,7 @@
 
 .inputBox input {
   /* border: solid 2px orange; */
-  width: 70%;
+  width: 450px;
   background: none;
   color: var(--low-white);
   margin-top: 1.5rem;

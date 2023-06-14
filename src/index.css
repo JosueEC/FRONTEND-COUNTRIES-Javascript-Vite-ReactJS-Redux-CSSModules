@@ -47,5 +47,5 @@ section {
   justify-content: center;
   min-height: 100%;
   padding: 0 8rem;
-  border: solid 2px red;
+  /* border: solid 2px red; */
 }

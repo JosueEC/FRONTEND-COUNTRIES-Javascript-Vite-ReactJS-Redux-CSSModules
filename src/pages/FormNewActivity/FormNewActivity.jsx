@@ -1,4 +1,5 @@
 import InputValidate from '../../components/InputValidate/InputValidate'
+import SelectorCountry from '../../components/SelectorCountry/SelectorCountry'
 import { validateActivityName, validateDifficultyActivity, validateActivityDuration, validateActivitySeason, validateActivityImage } from '../../services/validators/formValidators'
 
 import styles from './FormNewActivity.module.css'
@@ -13,6 +14,9 @@ export default function FormNewActivity () {
           <InputValidate inputType='number' nameLabel='duration' textLabel='Duration' validateFunction={validateActivityDuration} />
           <InputValidate inputType='text' nameLabel='season' textLabel='Season' validateFunction={validateActivitySeason} />
           <InputValidate inputType='text' nameLabel='image' textLabel='Image' validateFunction={validateActivityImage} />
+        </div>
+        <div className={styles.containerCountryOptions}>
+          <SelectorCountry />
         </div>
       </form>
     </section>

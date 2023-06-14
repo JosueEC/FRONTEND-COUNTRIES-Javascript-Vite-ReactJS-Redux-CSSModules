@@ -1,6 +1,12 @@
 .form {
   /* border: solid 2px greenyellow; */
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+}
+
+.form .containerInputs {
+  /* border: solid 2px orangered; */
   background-color: var(--element-black);
-  width: 50%;
   padding: 1rem;
 }

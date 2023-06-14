@@ -1,0 +1,11 @@
+.containerOptions {
+  /* border: solid 2px #d1d5db; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
