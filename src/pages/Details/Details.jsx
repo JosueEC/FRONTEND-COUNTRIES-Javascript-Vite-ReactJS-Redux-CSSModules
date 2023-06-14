@@ -1,27 +1,58 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+
+import { API } from '../../utils/constants'
+
 import FlagCountry from '../../components/FlagCountry/FlagCountry'
 import TagCountry from '../../components/TagCountry/TagCountry'
 import ContainerActivities from '../../components/ContainerActivities/ContainerActivities'
+
 import styles from './Details.module.css'
 
 export default function Details () {
+  const { countryID } = useParams()
+  const [country, setCountry] = useState()
+
+  useEffect(() => {
+    fetch(`${API.DOMAIN}/countries/${countryID}`)
+      .then((response) => {
+        if (!response.ok) throw new Error(`Error HTTP: ${response.status}`)
+        return response.json()
+      })
+      .then((results) => {
+        console.info('fetch-country-by-ID')
+        setCountry(results.data)
+      })
+      .catch((error) => console.error(error.message))
+  }, [])
+
   return (
     <section>
-      <div className={styles.containerDetails}>
-        <div className={styles.countryInformation}>
-          <FlagCountry imageFlag='https://flagcdn.com/w320/mx.png' nameCountry='mexico' />
-          <div className={styles.content}>
-            <TagCountry tagName='Name' tagData='Mexico' className={styles.tagCountry} />
-            <TagCountry tagName='Official Name' tagData='United Mexican States' />
-            <TagCountry tagName='Region' tagData='Americas' />
-            <TagCountry tagName='Sub-Region' tagData='North America' />
-            <TagCountry tagName='Capital City' tagData='Mexico City' />
-            <TagCountry tagName='Continent' tagData='North America' />
-            <TagCountry tagName='Population' tagData='126,577,691' />
-            <TagCountry tagName='Total Area' tagData='1, 964, 380 km2' />
-          </div>
-        </div>
-        <ContainerActivities />
-      </div>
+      {
+        (country)
+          ? (
+            <div className={styles.containerDetails}>
+              <div className={styles.countryInformation}>
+                <FlagCountry imageFlag={country.image} nameCountry={country.name} />
+                <div className={styles.content}>
+                  <TagCountry tagName='Name' tagData={country.name} />
+                  <TagCountry tagName='Official Name' tagData={country.official_name} />
+                  <TagCountry tagName='Region' tagData={country.region} />
+                  <TagCountry tagName='Sub-Region' tagData={country.subregion} />
+                  <TagCountry tagName='Capital City' tagData={country.capital} />
+                  <TagCountry tagName='Continent' tagData={country.continent} />
+                  <TagCountry tagName='Population' tagData={country.population} />
+                  <TagCountry tagName='Total Area' tagData={country.area} />
+                </div>
+              </div>
+              <ContainerActivities activities={country.activities} />
+            </div>
+            )
+          : (
+            <p>Loading Country...</p>
+            )
+      }
     </section>
   )
 }
