@@ -69,6 +69,17 @@ export default function FormNewActivity () {
             <label htmlFor='image'>Activity Image</label>
             {(errors.image) && <span className={styles.messageError}>{errors.image}</span>}
           </div>
+          <div className={styles.inputBox}>
+            <input
+              type='text'
+              name='season'
+              placeholder='verano, otoño, invierno, primavera'
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={form.season} required
+            />
+            {(errors.season) && <span className={styles.messageError}>{errors.season}</span>}
+          </div>
           <input type='submit' value='Create Activity' className={styles.buttonSumbit} />
         </div>
         <div className={styles.containerCountryOptions}>

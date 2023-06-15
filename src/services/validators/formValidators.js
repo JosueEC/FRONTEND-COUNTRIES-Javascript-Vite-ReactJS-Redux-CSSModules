@@ -3,6 +3,7 @@ export const validationForm = (form) => {
   const regexTtext = /[a-zA-Z ]{2,254}/
   const regexNumber = /^[1-5]{1}$/
   const regexURL = /^(https?:\/\/)/
+  const acceptedSeasons = ['verano', 'otoño', 'invierno', 'primavera']
 
   if (!form.name.trim()) {
     errors.name = 'this field is required'
@@ -26,6 +27,14 @@ export const validationForm = (form) => {
     errors.duration = 'activity duration must be less than equal to 5 hours.'
   } else {
     delete errors.duration
+  }
+
+  if (!form.season.trim()) {
+    errors.season = 'this field is required'
+  } else if (!acceptedSeasons.includes(form.season)) {
+    errors.season = 'activity season must be a valid season of the year.'
+  } else {
+    delete errors.season
   }
 
   if (!form.image.trim()) {
