@@ -1,50 +1,40 @@
-const validateActivityName = (activityName, setErrorData) => {
-  const cadena = activityName.length
-  if (cadena < 5 || cadena > 50) {
-    setErrorData('this field must be between 5 and 50 characters in length')
-  } else {
-    setErrorData('')
-  }
-}
-
-const validateDifficultyActivity = (difficulty, setErrorData) => {
-  if (difficulty < 1 || difficulty > 5) {
-    setErrorData('activity difficulty must be between 1 and 5 range.')
-  } else {
-    setErrorData('')
-  }
-}
-
-const validateActivityDuration = (duration, setErrorData) => {
-  if (duration < 1 || duration > 5) {
-    setErrorData('activity duration must be less than equal to 5 hours.')
-  } else {
-    setErrorData('')
-  }
-}
-
-const validateActivitySeason = (season, setErrorData) => {
-  const acceptedSeasons = ['verano', 'otoño', 'invierno', 'primavera']
-  if (!acceptedSeasons.includes(season)) {
-    setErrorData('activity season must be a valid season of the year.')
-  } else {
-    setErrorData('')
-  }
-}
-
-const validateActivityImage = (imageURL, setErrorData) => {
+export const validationForm = (form) => {
+  const errors = {}
+  const regexTtext = /[a-zA-Z ]{2,254}/
+  const regexNumber = /^[1-5]{1}$/
   const regexURL = /^(https?:\/\/)/
-  if (!regexURL.test(imageURL)) {
-    setErrorData('invalid URL format, must be an URL image')
-  } else {
-    setErrorData('')
-  }
-}
 
-export {
-  validateActivityName,
-  validateDifficultyActivity,
-  validateActivityDuration,
-  validateActivitySeason,
-  validateActivityImage
+  if (!form.name.trim()) {
+    errors.name = 'this field is required'
+  } else if (!regexTtext.test(form.name)) {
+    errors.name = 'activity name can only contain letters and spaces'
+  } else {
+    delete errors.name
+  }
+
+  if (form.difficulty < 1 || form.difficulty > 5) {
+    errors.difficulty = 'activity difficulty must be between 1 and 5 range.'
+  } else if (!regexNumber.test(form.difficulty)) {
+    errors.difficulty = 'activity difficulty must be between 1 and 5 range.'
+  } else {
+    delete errors.difficulty
+  }
+
+  if (form.duration < 1 || form.duration > 5) {
+    errors.duration = 'activity duration must be less than equal to 5 hours.'
+  } else if (!regexNumber.test(form.duration)) {
+    errors.duration = 'activity duration must be less than equal to 5 hours.'
+  } else {
+    delete errors.duration
+  }
+
+  if (!form.image.trim()) {
+    errors.image = 'this fields is required'
+  } else if (!regexURL.test(form.image)) {
+    errors.image = 'invalid URL format, must be an URL image'
+  } else {
+    delete errors.image
+  }
+
+  return errors
 }

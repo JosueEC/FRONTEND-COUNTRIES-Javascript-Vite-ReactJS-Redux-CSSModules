@@ -3,7 +3,7 @@
   width: 100%;
   height: 550px;
   padding: 1rem;
-  display: flex;
+  /* display: flex; */
 }
 
 .form .containerInputs {
@@ -15,7 +15,50 @@
   top: 0;
 }
 
-.buttonSubmit {
+.inputBox {
+  /* border: solid 2px purple; */
+  position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputBox input {
+  /* border: solid 2px orange; */
+  width: 450px;
+  background: none;
+  color: var(--low-white);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0;
+  font-size: 1.25rem;
+  border-bottom: 0.1rem solid var(--label);
+  cursor: text;
+}
+
+.inputBox label {
+  position: absolute;
+  top: 1.4rem;
+  left: 1rem;
+  font-size: 1.25rem;
+  color: var(--label);
+  transition: 0.4s;
+  cursor: text;
+}
+
+.inputBox input:focus ~ label,
+.inputBox input:valid ~ label {
+  top: -0.05rem;
+  font-size: 1.1rem;
+}
+
+.inputBox .messageError {
+  color: rgb(180, 0, 0);
+}
+
+.form .containerInputs .buttonSumbit {
   margin-top: 1rem;
   padding: 0.6rem 1.7rem;
   border-radius: 0.3rem;
@@ -28,7 +71,7 @@
   transition: 0.3s;
 }
 
-.buttonSubmit:hover {
+.form .containerInputs .buttonSubmit:hover {
   margin-left: 7px;
   cursor: pointer;
 }
