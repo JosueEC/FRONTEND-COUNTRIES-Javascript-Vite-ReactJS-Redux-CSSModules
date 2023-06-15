@@ -29,7 +29,8 @@
 
 html {
   font-size: 90%;
-  overflow-x: hidden; /* Establece lo que se muestra cuando el contenido desborda los bordes izquiero o derecho. hidden establece que no el contenido desbordado se recorta*/
+  overflow-x: hidden; 
+  /* Establece lo que se muestra cuando el contenido desborda los bordes izquiero o derecho. hidden establece que no el contenido desbordado se recorta*/
   /* overflow-y: hidden; */
 }
 
