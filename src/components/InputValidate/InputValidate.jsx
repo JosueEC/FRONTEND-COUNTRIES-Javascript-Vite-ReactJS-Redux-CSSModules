@@ -19,7 +19,7 @@ export default function InputValidate ({ inputType, nameLabel, textLabel, valida
 
   return (
     <div className={styles.inputBox}>
-      <input type={inputType} name={nameLabel} id={nameLabel} onKeyUp={handleInputChange} required />
+      <input type={inputType} name={nameLabel} id={nameLabel} onChange={handleInputChange} onBlur={handleInputChange} required />
       <label htmlFor={nameLabel}>{textLabel}</label>
       <span className={styles.messageError}>{errorData}</span>
     </div>

@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from 'react'
+import { useFetch } from '../../hooks/useFetch'
 import { useParams } from 'react-router-dom'
-
 import { API } from '../../utils/constants'
 
 import FlagCountry from '../../components/FlagCountry/FlagCountry'
@@ -12,45 +11,30 @@ import styles from './Details.module.css'
 
 export default function Details () {
   const { countryID } = useParams()
-  const [country, setCountry] = useState()
-
-  useEffect(() => {
-    fetch(`${API.DOMAIN}/countries/${countryID}`)
-      .then((response) => {
-        if (!response.ok) throw new Error(`Error HTTP: ${response.status}`)
-        return response.json()
-      })
-      .then((results) => {
-        console.info('fetch-country-by-ID')
-        setCountry(results.data)
-      })
-      .catch((error) => console.error(error.message))
-  }, [])
+  const { data, isLoading } = useFetch(`${API.DOMAIN}/countries/${countryID}`)
 
   return (
     <section>
       {
-        (country)
-          ? (
+        (isLoading)
+          ? <p>Loading Country...</p>
+          : (
             <div className={styles.containerDetails}>
               <div className={styles.countryInformation}>
-                <FlagCountry imageFlag={country.image} nameCountry={country.name} />
+                <FlagCountry imageFlag={data.image} nameCountry={data.name} />
                 <div className={styles.content}>
-                  <TagCountry tagName='Name' tagData={country.name} />
-                  <TagCountry tagName='Official Name' tagData={country.official_name} />
-                  <TagCountry tagName='Region' tagData={country.region} />
-                  <TagCountry tagName='Sub-Region' tagData={country.subregion} />
-                  <TagCountry tagName='Capital City' tagData={country.capital} />
-                  <TagCountry tagName='Continent' tagData={country.continent} />
-                  <TagCountry tagName='Population' tagData={country.population} />
-                  <TagCountry tagName='Total Area' tagData={country.area} />
+                  <TagCountry tagName='Name' tagData={data.name} />
+                  <TagCountry tagName='Official Name' tagData={data.official_name} />
+                  <TagCountry tagName='Region' tagData={data.region} />
+                  <TagCountry tagName='Sub-Region' tagData={data.subregion} />
+                  <TagCountry tagName='Capital City' tagData={data.capital} />
+                  <TagCountry tagName='Continent' tagData={data.continent} />
+                  <TagCountry tagName='Population' tagData={data.population} />
+                  <TagCountry tagName='Total Area' tagData={data.area} />
                 </div>
               </div>
-              <ContainerActivities activities={country.activities} />
+              <ContainerActivities activities={data.activities} />
             </div>
-            )
-          : (
-            <p>Loading Country...</p>
             )
       }
     </section>
