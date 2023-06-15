@@ -21,8 +21,7 @@ const initialState = {
     season: '',
     image: '',
     countries: []
-  },
-  selectedCountriesForm: []
+  }
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -74,12 +73,12 @@ const rootReducer = (state = initialState, action) => {
     case ADD_COUNTRY_FORM:
       return {
         ...state,
-        selectedCountriesForm: [...state.selectedCountriesForm, action.payload]
+        activityForm: addCountryForm(state.activityForm, action.payload)
       }
     case REMOVE_COUNTRY_FORM:
       return {
         ...state,
-        selectedCountriesForm: state.selectedCountriesForm.filter((countryID) => countryID !== action.payload)
+        activityForm: removeCountryForm(state.activityForm, action.payload)
       }
     case SET_FIELD_FORM:
       return {
@@ -98,6 +97,22 @@ function setFieldForm (stateForm, { fieldName, fieldValue }) {
   newState[fieldName] = fieldValue
 
   console.log(newState)
+  return newState
+}
+
+function addCountryForm (stateForm, countryID) {
+  const newState = { ...stateForm }
+  newState.countries.push(countryID)
+
+  console.info(newState)
+  return newState
+}
+
+function removeCountryForm (stateForm, countryID) {
+  const newState = { ...stateForm }
+  newState.countries = newState.countries.filter((id) => id !== countryID)
+
+  console.info(newState)
   return newState
 }
 
