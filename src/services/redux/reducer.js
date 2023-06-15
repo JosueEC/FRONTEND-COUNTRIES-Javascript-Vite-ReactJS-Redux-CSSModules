@@ -7,21 +7,13 @@ import {
   ORDER_COUNTRIES_A_TO_Z,
   ORDER_COUNTRIES_Z_TO_A,
   ADD_COUNTRY_FORM,
-  REMOVE_COUNTRY_FORM,
-  SET_FIELD_FORM
+  REMOVE_COUNTRY_FORM
 } from './actions'
 
 const initialState = {
   countries: [],
   auxCountries: [],
-  activityForm: {
-    name: '',
-    difficulty: 0,
-    duration: 0,
-    season: '',
-    image: '',
-    countries: []
-  }
+  selectedCountriesForm: []
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -73,47 +65,18 @@ const rootReducer = (state = initialState, action) => {
     case ADD_COUNTRY_FORM:
       return {
         ...state,
-        activityForm: addCountryForm(state.activityForm, action.payload)
+        selectedCountriesForm: [...state.selectedCountriesForm, action.payload]
       }
     case REMOVE_COUNTRY_FORM:
       return {
         ...state,
-        activityForm: removeCountryForm(state.activityForm, action.payload)
-      }
-    case SET_FIELD_FORM:
-      return {
-        ...state,
-        activityForm: setFieldForm(state.activityForm, action.payload)
+        selectedCountriesForm: state.selectedCountriesForm.filter((countryID) => countryID !== action.payload)
       }
     default:
       return {
         ...state
       }
   }
-}
-
-function setFieldForm (stateForm, { fieldName, fieldValue }) {
-  const newState = { ...stateForm }
-  newState[fieldName] = fieldValue
-
-  console.log(newState)
-  return newState
-}
-
-function addCountryForm (stateForm, countryID) {
-  const newState = { ...stateForm }
-  newState.countries.push(countryID)
-
-  console.info(newState)
-  return newState
-}
-
-function removeCountryForm (stateForm, countryID) {
-  const newState = { ...stateForm }
-  newState.countries = newState.countries.filter((id) => id !== countryID)
-
-  console.info(newState)
-  return newState
 }
 
 export default rootReducer
