@@ -28,6 +28,7 @@ export default function SelectorCountry () {
                 return (
                   <SelectorBox
                     key={id}
+                    id={id}
                     imageFlag={image}
                     countryName={name}
                   />

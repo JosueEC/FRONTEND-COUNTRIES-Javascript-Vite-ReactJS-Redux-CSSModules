@@ -1,12 +1,20 @@
 /* eslint-disable react/prop-types */
+import { useDispatch } from 'react-redux'
 import { useState } from 'react'
+import { addCountryForm, removeCountryForm } from '../../services/redux/actions'
 import './SelectorBox.css'
 
-export default function SelectorBox ({ imageFlag, countryName }) {
+export default function SelectorBox ({ id, imageFlag, countryName }) {
   const [selected, setSelected] = useState(false)
+  const dispatch = useDispatch()
 
   function handleSelected () {
     setSelected((prevState) => !prevState)
+    if (selected) {
+      dispatch(removeCountryForm(id))
+    } else {
+      dispatch(addCountryForm(id))
+    }
   }
 
   return (

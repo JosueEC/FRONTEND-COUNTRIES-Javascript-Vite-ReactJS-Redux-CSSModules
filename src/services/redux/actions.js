@@ -8,6 +8,9 @@ export const ORDER_COUNTRIES_LOWER_POPULATION = 'ORDER_COUNTRIES_LOWER_POPULATIO
 export const ORDER_COUNTRIES_A_TO_Z = 'ORDER_COUNTRIES_A_TO_Z'
 export const ORDER_COUNTRIES_Z_TO_A = 'ORDER_COUNTRIES_Z_TO_A'
 
+export const ADD_COUNTRY_FORM = 'ADD_COUNTRY_FORM'
+export const REMOVE_COUNTRY_FORM = 'REMOVE_COUNTRY_FORM'
+
 const getCountries = () => {
   const URL = `${API.DOMAIN}/countries`
 
@@ -79,6 +82,18 @@ const orderCountriesZtoA = () => {
   }
 }
 
+const addCountryForm = (countryID) => {
+  return function (dispatch) {
+    dispatch({ type: ADD_COUNTRY_FORM, payload: countryID })
+  }
+}
+
+const removeCountryForm = (countryID) => {
+  return function (dispatch) {
+    dispatch({ type: REMOVE_COUNTRY_FORM, payload: countryID })
+  }
+}
+
 export {
   getCountries,
   getCountriesByName,
@@ -86,5 +101,7 @@ export {
   orderCountriesHigherPopulation,
   orderCountriesLowerPopulation,
   orderCountriesAtoZ,
-  orderCountriesZtoA
+  orderCountriesZtoA,
+  addCountryForm,
+  removeCountryForm
 }

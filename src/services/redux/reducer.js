@@ -1,8 +1,19 @@
-import { GET_COUNTRIES, GET_COUNTRIES_BY_NAME, FILTER_COUNTRIES_BY_CONTINENT, ORDER_COUNTRIES_HIGHER_POPULATION, ORDER_COUNTRIES_LOWER_POPULATION, ORDER_COUNTRIES_A_TO_Z, ORDER_COUNTRIES_Z_TO_A } from './actions'
+import {
+  GET_COUNTRIES,
+  GET_COUNTRIES_BY_NAME,
+  FILTER_COUNTRIES_BY_CONTINENT,
+  ORDER_COUNTRIES_HIGHER_POPULATION,
+  ORDER_COUNTRIES_LOWER_POPULATION,
+  ORDER_COUNTRIES_A_TO_Z,
+  ORDER_COUNTRIES_Z_TO_A,
+  ADD_COUNTRY_FORM,
+  REMOVE_COUNTRY_FORM
+} from './actions'
 
 const initialState = {
   countries: [],
-  auxCountries: []
+  auxCountries: [],
+  selectedCountriesForm: []
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -50,6 +61,16 @@ const rootReducer = (state = initialState, action) => {
           if (a.name > b.name) return -1
           return 0
         })
+      }
+    case ADD_COUNTRY_FORM:
+      return {
+        ...state,
+        selectedCountriesForm: [...state.selectedCountriesForm, action.payload]
+      }
+    case REMOVE_COUNTRY_FORM:
+      return {
+        ...state,
+        selectedCountriesForm: state.selectedCountriesForm.filter((countryID) => countryID !== action.payload)
       }
     default:
       return {
