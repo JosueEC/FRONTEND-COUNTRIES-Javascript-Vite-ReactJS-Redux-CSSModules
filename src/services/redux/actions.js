@@ -8,6 +8,8 @@ export const ORDER_COUNTRIES_LOWER_POPULATION = 'ORDER_COUNTRIES_LOWER_POPULATIO
 export const ORDER_COUNTRIES_A_TO_Z = 'ORDER_COUNTRIES_A_TO_Z'
 export const ORDER_COUNTRIES_Z_TO_A = 'ORDER_COUNTRIES_Z_TO_A'
 
+export const SET_FIELD_FORM = 'SET_FIELD_FORM'
+
 export const ADD_COUNTRY_FORM = 'ADD_COUNTRY_FORM'
 export const REMOVE_COUNTRY_FORM = 'REMOVE_COUNTRY_FORM'
 
@@ -94,6 +96,12 @@ const removeCountryForm = (countryID) => {
   }
 }
 
+const setFieldForm = (fieldName, fieldValue) => {
+  return function (dispatch) {
+    dispatch({ type: SET_FIELD_FORM, payload: { fieldName, fieldValue } })
+  }
+}
+
 export {
   getCountries,
   getCountriesByName,
@@ -103,5 +111,6 @@ export {
   orderCountriesAtoZ,
   orderCountriesZtoA,
   addCountryForm,
-  removeCountryForm
+  removeCountryForm,
+  setFieldForm
 }
