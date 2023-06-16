@@ -13,13 +13,22 @@
   margin: 0 0.4rem;
   padding: 0.3rem;
   border-radius: 0.2rem;
-  color: var(--low-white);
+  color: var(--label);
   text-align: center;
   font-size: 1.5rem;
   font-family: var(--button-font);
   cursor: pointer;
 }
 
+.paginatorItem:hover {
+  background-color: var(--low-gray);
+}
+
 .paginatorItem--active {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+.paginatorItem--active:hover {
   background-color: var(--secondary-color);
 }
