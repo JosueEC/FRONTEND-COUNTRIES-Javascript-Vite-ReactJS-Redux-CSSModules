@@ -1,10 +1,13 @@
+/* eslint-disable react/prop-types */
 import { filterCountriesByContinent, getCountries } from '../../services/redux/actions'
 import { useDispatch } from 'react-redux'
+import { lazy, Suspense } from 'react'
 
 import { ROUTES } from '../../utils/constants'
-import LinkRoute from '../LinkRoute/LinkRoute'
-
+import LoaderSpinner from '../LoaderSpinner/LoaderSpinner'
 import './SideBar.css'
+
+const LinkRoute = lazy(() => import('../LinkRoute/LinkRoute'))
 
 export default function SideBar ({ closeSidebar, sidebar }) {
   const dispatch = useDispatch()
@@ -22,9 +25,11 @@ export default function SideBar ({ closeSidebar, sidebar }) {
   return (
     <div className={sidebar ? 'sidebar sidebar--open' : 'sidebar'}>
       <li onClick={closeSidebar} className='burger'><i className='fas fa-bars' /></li>
-      <LinkRoute textLink='Landing' route={ROUTES.LANDING} />
-      <LinkRoute textLink='Home' route={ROUTES.HOME} />
-      <LinkRoute textLink='Form' route={ROUTES.FORM} />
+      <Suspense fallback={<LoaderSpinner />}>
+        <LinkRoute textLink='Landing' route={ROUTES.LANDING} />
+        <LinkRoute textLink='Home' route={ROUTES.HOME} />
+        <LinkRoute textLink='Form' route={ROUTES.FORM} />
+      </Suspense>
       <br />
       <label>Continents</label>
       <li id='all countries' onClick={handleFilter}>All Countries</li>

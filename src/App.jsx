@@ -1,17 +1,18 @@
 import './App.css'
-import { useState } from 'react'
+import { lazy, Suspense, useState } from 'react'
 
 import { Routes, Route } from 'react-router-dom'
 import { ROUTES } from './utils/constants'
 
-import Landing from './pages/Landing/Landing'
-import Home from './pages/Home/Home'
-import Details from './pages/Details/Details'
-import FormNewActivity from './pages/FormNewActivity/FormNewActivity'
-
 import ToolBar from './components/ToolBar/ToolBar'
-import SideBar from './components/SideBar/SideBar'
-import Backdrop from './components/Backdrop/Backdrop'
+
+const SideBar = lazy(() => import('./components/SideBar/SideBar'))
+const Backdrop = lazy(() => import('./components/Backdrop/Backdrop'))
+
+const Landing = lazy(() => import('./pages/Landing/Landing'))
+const Home = lazy(() => import('./pages/Home/Home'))
+const Details = lazy(() => import('./pages/Details/Details'))
+const FormNewActivity = lazy(() => import('./pages/FormNewActivity/FormNewActivity'))
 
 function App () {
   const [sidebar, setSidebar] = useState(false)
@@ -23,26 +24,28 @@ function App () {
   return (
     <main>
       <ToolBar openSidebar={toogleSidebar} />
-      <SideBar closeSidebar={toogleSidebar} sidebar={sidebar} />
-      <Backdrop closeSidebar={toogleSidebar} sidebar={sidebar} />
-      <Routes>
-        <Route
-          path={ROUTES.LANDING}
-          element={<Landing />}
-        />
-        <Route
-          path={ROUTES.HOME}
-          element={<Home />}
-        />
-        <Route
-          path={ROUTES.DETAIL}
-          element={<Details />}
-        />
-        <Route
-          path={ROUTES.FORM}
-          element={<FormNewActivity />}
-        />
-      </Routes>
+      <Suspense fallback={<div className='containerLoader'><div className='spinner' /></div>}>
+        <SideBar closeSidebar={toogleSidebar} sidebar={sidebar} />
+        <Backdrop closeSidebar={toogleSidebar} sidebar={sidebar} />
+        <Routes>
+          <Route
+            path={ROUTES.LANDING}
+            element={<Landing />}
+          />
+          <Route
+            path={ROUTES.HOME}
+            element={<Home />}
+          />
+          <Route
+            path={ROUTES.DETAIL}
+            element={<Details />}
+          />
+          <Route
+            path={ROUTES.FORM}
+            element={<FormNewActivity />}
+          />
+        </Routes>
+      </Suspense>
     </main>
   )
 }
