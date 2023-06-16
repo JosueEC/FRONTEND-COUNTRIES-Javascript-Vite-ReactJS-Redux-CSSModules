@@ -33,7 +33,6 @@ export default function ContainerCards () {
 
   return (
     <div className={styles.containerCards}>
-      <h1>Flags of the World</h1>
       <Paginator totalPages={totalPages} pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <div className={styles.contentBox}>
         {

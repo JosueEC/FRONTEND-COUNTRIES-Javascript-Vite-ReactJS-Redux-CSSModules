@@ -1,4 +1,5 @@
 .sidebar {
+  /* border: solid 2px greenyellow; */
   position: absolute;
   z-index: 2;
   background-color: var(--element-black);
@@ -13,6 +14,7 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  overflow-x: visible;
 }
 
 .sidebar .burger {
@@ -44,4 +46,5 @@
 
 .sidebar--open {
   transform: translate(0%);
+  position: fixed;
 }
