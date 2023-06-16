@@ -47,6 +47,29 @@ const getCountriesByName = (countryName) => {
   }
 }
 
+const postFormNewActivity = (form) => {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(form)
+  }
+
+  return function (dispatch) {
+    fetch(`${API.DOMAIN}/activities`, options)
+      .then((response) => response.json())
+      .then((results) => {
+        console.info('fetch-post-new-activity')
+        if (results.status === 'CREATED') alert('New Activity Created')
+        else alert(results.error)
+      })
+      .catch((error) => {
+        console.error(error.message)
+      })
+  }
+}
+
 const filterCountriesByContinent = (continent) => {
   return function (dispatch) {
     console.info(`filter-countries-${continent}`)
@@ -97,6 +120,7 @@ const removeCountryForm = (countryID) => {
 export {
   getCountries,
   getCountriesByName,
+  postFormNewActivity,
   filterCountriesByContinent,
   orderCountriesHigherPopulation,
   orderCountriesLowerPopulation,

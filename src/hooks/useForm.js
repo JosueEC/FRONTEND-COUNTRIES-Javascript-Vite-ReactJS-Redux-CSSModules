@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { postFormNewActivity } from '../services/redux/actions'
 
 export function useForm (initialForm, validateForm) {
   const [form, setForm] = useState(initialForm)
   const [errors, setErrors] = useState({})
-  const [isLoading, setIsLoading] = useState(false)
-  // const [response, setResponse] = useState(null)
   const selectedCountries = useSelector((state) => state.selectedCountriesForm)
+  const dispatch = useDispatch()
 
   const completeForm = {
     ...form,
@@ -33,9 +33,7 @@ export function useForm (initialForm, validateForm) {
       alert('You must select at least one country')
     } else {
       if (Object.keys(errors).length === 0 && selectedCountries.length !== 0) {
-        setIsLoading(true)
-        alert('Valid Form')
-        console.info(completeForm)
+        dispatch(postFormNewActivity(completeForm))
       } else {
         alert('There are wrong fields in the form')
       }
@@ -45,8 +43,6 @@ export function useForm (initialForm, validateForm) {
   return {
     form,
     errors,
-    isLoading,
-    // response,
     handleChange,
     handleBlur,
     handleSubmit
