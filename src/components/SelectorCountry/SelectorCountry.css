@@ -11,3 +11,16 @@
   overflow-y: scroll;
 }
 
+.containerOptions::-webkit-scrollbar {
+  width: 10px;
+}
+
+.containerOptions::-webkit-scrollbar-track {
+  background: var(--element-black);
+}
+
+.containerOptions::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: 0.3rem;    
+}
+
