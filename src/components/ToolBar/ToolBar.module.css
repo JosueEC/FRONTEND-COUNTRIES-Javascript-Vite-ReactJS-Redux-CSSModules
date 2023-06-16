@@ -5,6 +5,7 @@
 .toolbar {
   /* border: solid 2px greenyellow; */
   position: fixed;
+  z-index: 3;
   width: 100vw;
   height: 50px;
   background-color: var(--element-black);
