@@ -17,9 +17,16 @@ export default function SearchBar () {
     dispatch(getCountriesByName(queryName))
   }
 
+  function handleKeyEnter (event) {
+    const pressedKey = event.key
+    if (pressedKey === 'Enter') {
+      dispatch(getCountriesByName(queryName))
+    }
+  }
+
   return (
     <div className={styles.containerSearchbar}>
-      <input type='search' placeholder='Search country' onChange={handleChange} className={styles.searchInput} />
+      <input type='search' placeholder='Search country' onChange={handleChange} onKeyDown={handleKeyEnter} className={styles.searchInput} />
       <button className={styles.button} onClick={handleSearch}>Search</button>
     </div>
   )
