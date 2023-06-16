@@ -1,4 +1,6 @@
-// import React from 'react'
+/* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom'
+import { ROUTES } from '../../utils/constants'
 import styles from './ToolBar.module.css'
 
 export default function ToolBar ({ openSidebar }) {
@@ -8,7 +10,7 @@ export default function ToolBar ({ openSidebar }) {
         <div className={styles.burger} onClick={openSidebar}>
           <i className='fas fa-bars' />
         </div>
-        <div className={styles.title}>FLAGSPEDIA</div>
+        <Link to={ROUTES.LANDING}><div className={styles.title}>FLAGSPEDIA</div></Link>
       </nav>
     </div>
   )
