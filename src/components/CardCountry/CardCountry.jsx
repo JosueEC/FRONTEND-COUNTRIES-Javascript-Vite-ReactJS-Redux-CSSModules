@@ -1,12 +1,12 @@
+/* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom'
-import styles from './CardCountry.module.css'
-
 import FlagCountry from '../FlagCountry/FlagCountry'
 import TagCountry from '../TagCountry/TagCountry'
+import styles from './CardCountry.module.css'
 
 export default function CardCountry ({ id, name, region, capital, population, continent, image }) {
   return (
-    <Link to={`/detail/${id}`} className={styles.linkCard} key={id}>
+    <Link to={`/detail/${id}`} className={styles.linkCard}>
       <div className={styles.card}>
         <FlagCountry imageFlag={image} nameCountry={name} />
         <div className={styles.content}>

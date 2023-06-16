@@ -2,13 +2,10 @@
 import { useEffect, useState, lazy, Suspense } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCountries } from '../../services/redux/actions'
-
-import styles from './ContainerCards.module.css'
-
 import LoaderSpinner from '../LoaderSpinner/LoaderSpinner'
 import Paginator from '../Paginator/Paginator'
+import styles from './ContainerCards.module.css'
 const CardCountry = lazy(() => import('../CardCountry/CardCountry'))
-// import CardCountry from '../CardCountry/CardCountry'
 
 export default function ContainerCards () {
   const countries = useSelector(state => state.countries)
@@ -39,24 +36,26 @@ export default function ContainerCards () {
         (visibleCountries)
           ? (
               visibleCountries.map(({ id, name, region, capital, population, continent, image }) => {
-                return (
-                  <Suspense key={id} fallback={<LoaderSpinner />}>
-                    <CardCountry
-                      key={id}
-                      id={id}
-                      name={name}
-                      region={region}
-                      capital={capital}
-                      population={population}
-                      continent={continent}
-                      image={image}
-                    />
-                  </Suspense>
-                )
+                if (typeof image !== 'undefined') {
+                  return (
+                    <Suspense key={id} fallback={<LoaderSpinner />}>
+                      <CardCountry
+                        key={id}
+                        id={id}
+                        name={name}
+                        region={region}
+                        capital={capital}
+                        population={population}
+                        continent={continent}
+                        image={image}
+                      />
+                    </Suspense>
+                  )
+                } else { return '' }
               })
             )
           : (
-            <h2>Loading Cards...</h2>
+            <LoaderSpinner />
             )
       }
         <CardCountry />
