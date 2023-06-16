@@ -4,15 +4,17 @@
   height: 600px;
   padding: 1rem;
   display: flex;
+  align-items:start;
+  justify-content: center;
 }
 
 .form .containerInputs {
   /* border: solid 2px orangered; */
   background-color: var(--element-black);
+  border-radius: 0.3rem;
   padding: 1rem;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+  width: 500px;
+  height: 85vh;
 }
 
 .inputBox {
@@ -58,9 +60,10 @@
   color: rgb(180, 0, 0);
 }
 
-.form .containerInputs .buttonSumbit {
+.form .containerInputs .buttonSubmit {
+  margin-left: 1rem;
   margin-top: 1rem;
-  padding: 0.6rem 1.7rem;
+  padding: 0.7rem 1.6rem;
   border-radius: 0.3rem;
   background: var(--degraded-background);
   color: var(--white);
@@ -74,4 +77,15 @@
 .form .containerInputs .buttonSubmit:hover {
   margin-left: 7px;
   cursor: pointer;
+}
+
+.form .containerCountryOptions {
+  /* border: solid 2px greenyellow; */
+  text-align: center;
+}
+
+.form .containerCountryOptions .labelSelector {
+  /* border: solid 2px greenyellow; */
+  font-family: var(--paragraph-font);
+  font-size: 1.2rem;
 }

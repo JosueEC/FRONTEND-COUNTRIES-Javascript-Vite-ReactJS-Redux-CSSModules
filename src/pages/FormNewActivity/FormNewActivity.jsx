@@ -80,10 +80,10 @@ export default function FormNewActivity () {
             />
             {(errors.season) && <span className={styles.messageError}>{errors.season}</span>}
           </div>
-          <input type='submit' value='Create Activity' className={styles.buttonSumbit} />
+          <input type='submit' value='Create Activity' className={styles.buttonSubmit} />
         </div>
         <div className={styles.containerCountryOptions}>
-          <span>Select at least one country</span>
+          <span className={styles.labelSelector}>Select the countries</span>
           <SelectorCountry />
         </div>
       </form>
