@@ -1,6 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useDispatch } from 'react-redux'
-import { orderCountriesHigherPopulation, orderCountriesLowerPopulation, getCountries } from '../../services/redux/actions'
+import {
+  orderCountriesHigherPopulation,
+  orderCountriesLowerPopulation,
+  getCountries
+} from '../../services/redux/actions'
 import styles from './ListOrderPopulation.module.css'
 
 export default function ListOrderPopulation () {
@@ -22,7 +26,12 @@ export default function ListOrderPopulation () {
   }
 
   return (
-    <select name='selectPopulation' onChange={handleSelect} defaultValue='random-population' className={styles.selectPopulation}>
+    <select
+      name='selectPopulation'
+      onChange={handleSelect}
+      defaultValue='random-population'
+      className={styles.selectPopulation}
+    >
       <option value='random-population'>Random Population</option>
       <option value='higher-population'>Higher Population</option>
       <option value='lower-population'>Lower Population</option>
