@@ -21,7 +21,12 @@ export default function ListOrderAlphabet () {
   }
 
   return (
-    <select name='selectAlphabet' onChange={handleOrder} defaultValue='Random Alphabet' className={styles.selectAlphabet}>
+    <select
+      name='selectAlphabet'
+      onChange={handleOrder}
+      defaultValue='Random Alphabet'
+      className={styles.selectAlphabet}
+    >
       <option value='random'>Random Alphabet</option>
       <option value='a-z'>A - Z</option>
       <option value='z-a'>Z - A</option>
