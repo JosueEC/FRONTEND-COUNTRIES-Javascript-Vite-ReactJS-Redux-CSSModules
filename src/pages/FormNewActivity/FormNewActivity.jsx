@@ -83,6 +83,7 @@ export default function FormNewActivity () {
           <input type='submit' value='Create Activity' className={styles.buttonSumbit} />
         </div>
         <div className={styles.containerCountryOptions}>
+          <span>Select at least one country</span>
           <SelectorCountry />
         </div>
       </form>

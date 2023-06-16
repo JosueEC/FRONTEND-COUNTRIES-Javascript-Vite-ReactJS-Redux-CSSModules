@@ -1,4 +1,4 @@
-export const validationForm = (form) => {
+export const validationForm = (form, selectedCountries) => {
   const errors = {}
   const regexTtext = /[a-zA-Z ]{2,254}/
   const regexNumber = /^[1-5]{1}$/
