@@ -17,6 +17,8 @@
   --title-font: 'Khand', sans-serif;
   --paragraph-font: 'Lato', sans-serif;
   --button-font: 'Hindi', sans-serif;
+
+  --fade-in: fadeIn 1s ease 0s 1 normal forwards;
 }
 
 * {
@@ -67,4 +69,16 @@ section {
   min-height: 100%;
   padding: 0 8rem;
   /* border: solid 2px red; */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

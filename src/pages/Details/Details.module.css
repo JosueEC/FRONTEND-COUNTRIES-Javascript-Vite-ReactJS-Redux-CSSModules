@@ -4,6 +4,7 @@
   display: flex;
   border-radius: 0.3rem;
   gap: 2rem;
+  animation: var(--fade-in);
 }
 
 .containerDetails .countryInformation {

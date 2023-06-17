@@ -5,4 +5,5 @@
   height: 35px;
   margin-bottom: 1rem;
   gap: 1.5rem;
+  animation: var(--fade-in);
 }
