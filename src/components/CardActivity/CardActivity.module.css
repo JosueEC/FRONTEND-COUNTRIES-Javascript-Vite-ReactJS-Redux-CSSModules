@@ -14,7 +14,7 @@
   
 .cardActivity .content .bannerActivity {
   /* border: solid 2px red; */
-  /* background-color: green; */
+  background-color: var(--secondary-color);
   padding: 0.7rem 0;
   font-weight: bold;
   border-bottom-left-radius: 0.3rem;
