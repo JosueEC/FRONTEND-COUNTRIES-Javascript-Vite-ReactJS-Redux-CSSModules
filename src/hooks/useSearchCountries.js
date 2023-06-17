@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { getCountriesByName } from '../services/redux/actions'
+import { getCountriesByName, getCountries } from '../services/redux/actions'
 
 export const useSearchCountries = () => {
   const [queryName, setQueryName] = useState('')
@@ -14,6 +14,8 @@ export const useSearchCountries = () => {
   function handleSearch (event) {
     if (queryName !== '') {
       dispatch(getCountriesByName(queryName))
+    } else {
+      dispatch(getCountries())
     }
   }
 
