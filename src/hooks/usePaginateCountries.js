@@ -18,7 +18,9 @@ export const usePaginate = (data, getFunction, elementsPerPage) => {
     if (data.length === 0) {
       dispatch(getFunction())
     }
-  }, [])
+    setCurrentPage(1)
+    console.info(currentPage)
+  }, [data])
 
   return {
     totalPages,
