@@ -8,15 +8,17 @@
 
 .containerDetails .countryInformation {
   /* border: solid 2px purple; */
+  width: 320px;
+  height: 450px;
   background-color: var(--element-black);
   border-radius: 0.3rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: first baseline;
+  cursor: pointer;
 }
 
 .containerDetails .countryInformation .content {
-  /* border: solid 2px gold; */
   margin-top: 1rem;
 }
