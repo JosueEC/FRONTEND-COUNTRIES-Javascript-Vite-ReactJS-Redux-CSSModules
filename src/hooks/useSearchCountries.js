@@ -11,6 +11,10 @@ export const useSearchCountries = () => {
     setQueryName(queryText)
   }
 
+  function handleGetCountries () {
+    dispatch(getCountries())
+  }
+
   function handleSearch (event) {
     if (queryName !== '') {
       dispatch(getCountriesByName(queryName))
@@ -28,6 +32,7 @@ export const useSearchCountries = () => {
 
   return {
     handleChange,
+    handleGetCountries,
     handleSearch,
     handleKeyDown
   }

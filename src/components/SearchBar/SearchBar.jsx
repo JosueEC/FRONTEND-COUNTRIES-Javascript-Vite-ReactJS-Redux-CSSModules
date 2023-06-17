@@ -2,7 +2,7 @@ import { useSearchCountries } from '../../hooks/useSearchCountries'
 import styles from './SearchBar.module.css'
 
 export default function SearchBar () {
-  const { handleChange, handleSearch, handleKeyDown } = useSearchCountries()
+  const { handleChange, handleGetCountries, handleSearch, handleKeyDown } = useSearchCountries()
 
   return (
     <div className={styles.containerSearchbar}>
@@ -14,6 +14,7 @@ export default function SearchBar () {
         className={styles.searchInput}
       />
       <button className={styles.button} onClick={handleSearch}>Search</button>
+      <button className={styles.button} onClick={handleGetCountries}>All Countries</button>
     </div>
   )
 }
