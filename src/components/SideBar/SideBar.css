@@ -1,5 +1,5 @@
 .sidebar {
-  /* border: solid 2px greenyellow; */
+  /* border: solid 2px rebeccapurple; */
   position: absolute;
   z-index: 2;
   background-color: var(--element-black);
@@ -47,4 +47,17 @@
 .sidebar--open {
   transform: translate(0%);
   position: fixed;
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {} 
+
+/* Tablet */
+@media screen and (min-width: 767px) and (max-width: 1023px) {}
+
+/* Movil */
+@media screen and (max-width: 767px) {
+  .sidebar {
+    font-size: 1.3rem;
+  }
 }
