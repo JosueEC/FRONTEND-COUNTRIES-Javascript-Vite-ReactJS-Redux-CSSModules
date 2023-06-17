@@ -1,9 +1,10 @@
 .containerNavbar {
+  /* border: solid 2px teal; */
   padding-bottom: 70px;
 }
 
 .toolbar {
-  /* border: solid 2px greenyellow; */
+  /* border: solid 2px orange; */
   position: fixed;
   z-index: 3;
   width: 100vw;
@@ -39,4 +40,18 @@
 .containerNavbar .toolbar .title:hover {
   color: var(--white);
   cursor: pointer;
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {} 
+
+/* Tablet */
+@media screen and (min-width: 767px) and (max-width: 1023px) {}
+
+/* Movil */
+@media screen and (max-width: 767px) {
+  .toolbar {
+    font-size: 1.6rem;
+    height: 55px;
+  }
 }
