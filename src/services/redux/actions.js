@@ -1,4 +1,5 @@
 import { API } from '../../utils/constants'
+import * as log from '../../utils/logger'
 
 export const GET_COUNTRIES = 'GET_COUNTRIES'
 export const GET_COUNTRIES_BY_NAME = 'GET_COUNTRIES_BY_NAME'
@@ -33,13 +34,10 @@ const getCountriesByName = (countryName) => {
 
   return function (dispatch) {
     fetch(URL)
-      .then((response) => {
-        if (!response.ok) throw new Error(`Error HTTP: ${response.status}`)
-        return response.json()
-      })
-      .then((results) => {
-        console.info('fetch-countries-by-name')
-        dispatch({ type: GET_COUNTRIES_BY_NAME, payload: results.data })
+      .then((response) => response.json())
+      .then((result) => {
+        log.actionFetch('fetch-countries-by-name')
+        dispatch({ type: GET_COUNTRIES_BY_NAME, payload: result.data })
       })
       .catch((error) => {
         console.error(error.message)

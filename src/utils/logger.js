@@ -4,6 +4,20 @@ function debbug (label, value) {
   color: white;`, value)
 }
 
+function actionFetch (value) {
+  console.log(`%c${value}`,
+  `background: green;
+  color: white;`)
+}
+
+function errorFetch (value) {
+  console.log(`%c${value}`,
+  `background: red;
+  color: white;`)
+}
+
 export {
-  debbug
+  debbug,
+  actionFetch,
+  errorFetch
 }
