@@ -1,5 +1,5 @@
 .containerCards {
-  /* border: solid 2px greenyellow; */
+  border: solid 2px skyblue;
   width: 100%;
 }
 
@@ -10,4 +10,11 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.7rem;
+}
+
+/* Movil */
+@media screen and (max-width: 767px) {
+  .containerCards {
+    width: 90vw;
+  }
 }

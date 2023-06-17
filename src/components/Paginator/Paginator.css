@@ -1,5 +1,5 @@
 .containerPaginator {
-  /* border: solid 1px purple; */
+  border: solid 1px purple;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,4 +32,18 @@
 
 .paginatorItem--active:hover {
   background-color: var(--secondary-color);
+}
+
+/* Movil */
+@media screen and (max-width: 767px) {
+  .containerPaginator {
+    width: 90vw;
+    margin: 0;
+    justify-content: space-between;
+  }
+
+  .paginatorItem {
+    margin: 0 0.3rem;
+    font-size: 1.8rem;
+  }
 }
