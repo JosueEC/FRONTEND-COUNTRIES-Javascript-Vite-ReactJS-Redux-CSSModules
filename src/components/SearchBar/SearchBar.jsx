@@ -1,3 +1,4 @@
+import { Toaster } from 'sonner'
 import { useSearchCountries } from '../../hooks/useSearchCountries'
 import styles from './SearchBar.module.css'
 
@@ -6,6 +7,7 @@ export default function SearchBar () {
 
   return (
     <div className={styles.containerSearchbar}>
+      <Toaster richColors position='bottom-right' />
       <input
         type='search'
         placeholder='Search Country'

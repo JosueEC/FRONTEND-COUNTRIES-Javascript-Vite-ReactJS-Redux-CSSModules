@@ -13,6 +13,7 @@ const Landing = lazy(() => import('./pages/Landing/Landing'))
 const Home = lazy(() => import('./pages/Home/Home'))
 const Details = lazy(() => import('./pages/Details/Details'))
 const FormNewActivity = lazy(() => import('./pages/FormNewActivity/FormNewActivity'))
+const NotFound = lazy(() => import('./pages/Not Found/NotFound'))
 
 function App () {
   const [sidebar, setSidebar] = useState(false)
@@ -43,6 +44,10 @@ function App () {
           <Route
             path={ROUTES.FORM}
             element={<FormNewActivity />}
+          />
+          <Route
+            path={ROUTES.NOTFOUND}
+            element={<NotFound />}
           />
         </Routes>
       </Suspense>

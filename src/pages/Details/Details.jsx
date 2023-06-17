@@ -6,6 +6,7 @@ import { API } from '../../utils/constants'
 import FlagCountry from '../../components/FlagCountry/FlagCountry'
 import TagCountry from '../../components/TagCountry/TagCountry'
 import ContainerActivities from '../../components/ContainerActivities/ContainerActivities'
+import LoaderSpinner from '../../components/LoaderSpinner/LoaderSpinner'
 
 import styles from './Details.module.css'
 
@@ -17,7 +18,7 @@ export default function Details () {
     <section>
       {
         (isLoading)
-          ? <p>Loading Country...</p>
+          ? <LoaderSpinner />
           : (
             <div className={styles.containerDetails}>
               <div className={styles.countryInformation}>

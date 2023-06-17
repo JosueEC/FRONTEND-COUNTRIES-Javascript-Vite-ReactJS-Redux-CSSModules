@@ -2,6 +2,7 @@ const ROUTES = Object.freeze({
   LANDING: '/',
   HOME: '/home',
   DETAIL: '/detail/:countryID',
+  NOTFOUND: '/notfound',
   FORM: '/form'
 })
 

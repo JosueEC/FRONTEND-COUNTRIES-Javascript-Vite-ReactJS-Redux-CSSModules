@@ -1,3 +1,4 @@
+import { toast } from 'sonner'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { getCountriesByName, getCountries } from '../services/redux/actions'
@@ -12,13 +13,16 @@ export const useSearchCountries = () => {
   }
 
   function handleGetCountries () {
+    toast('Searching All Countries...')
     dispatch(getCountries())
   }
 
   function handleSearch (event) {
     if (queryName !== '') {
+      toast(`Searching ${queryName}...`)
       dispatch(getCountriesByName(queryName))
     } else {
+      toast('Searching All Countries...')
       dispatch(getCountries())
     }
   }

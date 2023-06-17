@@ -58,9 +58,8 @@ const postFormNewActivity = (form) => {
     fetch(`${API.DOMAIN}/activities`, options)
       .then((response) => response.json())
       .then((results) => {
-        console.info('fetch-post-new-activity')
-        if (results.status === 'CREATED') alert('New Activity Created')
-        else alert(results.error)
+        if (results.status === 'CREATED') console.info('The activity has been created')
+        else console.error('Something went wrong, try again later.')
       })
       .catch((error) => {
         console.error(error.message)

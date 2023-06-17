@@ -1,3 +1,4 @@
+import { Toaster } from 'sonner'
 import { useForm } from '../../hooks/useForm'
 import { validationForm } from '../../services/validators/formValidators'
 import SelectorCountry from '../../components/SelectorCountry/SelectorCountry'
@@ -23,6 +24,7 @@ export default function FormNewActivity () {
 
   return (
     <section>
+      <Toaster richColors position='top-right' />
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.containerInputs}>
           <div className={styles.inputBox}>

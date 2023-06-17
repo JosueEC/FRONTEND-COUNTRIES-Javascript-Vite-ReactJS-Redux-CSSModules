@@ -6,7 +6,7 @@ import styles from './CardCountry.module.css'
 
 export default function CardCountry ({ id, name, region, capital, population, continent, image }) {
   return (
-    <Link to={`/detail/${id}`} className={styles.linkCard}>
+    <Link to={(id === 'NO RESULT') ? '/notfound' : `/detail/${id}`} className={styles.linkCard}>
       <div className={styles.card}>
         <FlagCountry imageFlag={image} nameCountry={name} />
         <div className={styles.content}>

@@ -1,3 +1,4 @@
+import { toast } from 'sonner'
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { postFormNewActivity } from '../services/redux/actions'
@@ -30,12 +31,21 @@ export function useForm (initialForm, validateForm) {
     event.preventDefault()
     setErrors(validateForm(form))
     if (selectedCountries.length === 0) {
-      alert('You must select at least one country')
+      toast.error('You must select at least one country')
     } else {
       if (Object.keys(errors).length === 0 && selectedCountries.length !== 0) {
         dispatch(postFormNewActivity(completeForm))
+        const promise = () => new Promise((resolve) => setTimeout(resolve, 2000))
+
+        toast.promise(promise, {
+          loading: 'Creating Activity...',
+          success: () => {
+            return 'The activity has been created'
+          },
+          error: 'Something went wrong, try again later.'
+        })
       } else {
-        alert('There are wrong fields in the form')
+        toast.error('There are wrong fields in the form')
       }
     }
   }
