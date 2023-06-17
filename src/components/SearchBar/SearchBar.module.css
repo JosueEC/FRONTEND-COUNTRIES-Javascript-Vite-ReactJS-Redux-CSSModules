@@ -1,5 +1,5 @@
 .containerSearchbar {
-  border: solid 2px palevioletred;
+  /* border: solid 2px palevioletred; */
   padding: 1rem;
   width: 100%;
   text-align: center;
@@ -46,12 +46,6 @@
 .containerSearchbar .button:focus {
   border: solid 2px var(--principal-color);
 }
-
-/* Desktop */
-@media screen and (min-width: 1024px) {} 
-
-/* Tablet */
-@media screen and (min-width: 767px) and (max-width: 1023px) {}
 
 /* Movil */
 @media screen and (max-width: 767px) {

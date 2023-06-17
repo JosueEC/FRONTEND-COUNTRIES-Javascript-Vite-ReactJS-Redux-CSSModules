@@ -1,5 +1,5 @@
 .containerLists {
-  border: solid 2px purple;
+  /* border: solid 2px purple; */
   display: flex;
   width: 80%;
   height: 35px;
@@ -7,12 +7,6 @@
   gap: 1.5rem;
   animation: var(--fade-in);
 }
-
-/* Desktop */
-@media screen and (min-width: 1024px) {} 
-
-/* Tablet */
-@media screen and (min-width: 767px) and (max-width: 1023px) {}
 
 /* Movil */
 @media screen and (max-width: 767px) {

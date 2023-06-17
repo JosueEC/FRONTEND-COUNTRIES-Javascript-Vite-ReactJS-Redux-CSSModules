@@ -1,22 +1,16 @@
 .selectAlphabet {
-  border: solid 2px hotpink;
+  /* border: solid 2px hotpink; */
   font-size: 1.1rem;
   width: 180px;
   font-family: var(--button-font);
   font-weight: bold;
   text-align: center;
   background-color: var(--element-black);
-  color: var(--low-white);
+  color: var(--label);
   border-radius: 0.3rem;
   cursor: pointer;
   transition: 0.4s;
 }
-
-/* Desktop */
-@media screen and (min-width: 1024px) {} 
-
-/* Tablet */
-@media screen and (min-width: 767px) and (max-width: 1023px) {}
 
 /* Movil */
 @media screen and (max-width: 767px) {
