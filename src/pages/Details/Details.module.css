@@ -1,5 +1,5 @@
 .containerDetails {
-  /* border: solid 2px greenyellow; */
+  /* border: solid 2px hotpink; */
   padding: 1rem;
   display: flex;
   border-radius: 0.3rem;
@@ -22,4 +22,12 @@
 
 .containerDetails .countryInformation .content {
   margin-top: 1rem;
+}
+
+/* Movil */
+@media screen and (max-width: 767px) {
+  .containerDetails {
+    display: flex;
+    flex-direction: column;
+  }
 }
