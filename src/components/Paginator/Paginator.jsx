@@ -1,31 +1,14 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react'
+import { usePaginator } from '../../hooks/usePaginator'
 import './Paginator.css'
 
 export default function Paginator ({ totalPages, pages, currentPage, setCurrentPage }) {
-  const pageNumberLimit = 5
-  const [maxNumberPage, setMaxNumberPage] = useState(5)
-  const [minNumberPage, setMinNumberPage] = useState(0)
-
-  function handlePreviousPage () {
-    if (currentPage !== 1) {
-      setCurrentPage(currentPage - 1)
-      if (Number((currentPage - 1) % pageNumberLimit) === 0) {
-        setMaxNumberPage(maxNumberPage - pageNumberLimit)
-        setMinNumberPage(minNumberPage - pageNumberLimit)
-      }
-    }
-  }
-
-  function handleNextPage () {
-    if (currentPage !== totalPages) {
-      setCurrentPage(currentPage + 1)
-      if (currentPage + 1 > maxNumberPage) {
-        setMaxNumberPage(maxNumberPage + pageNumberLimit)
-        setMinNumberPage(minNumberPage + pageNumberLimit)
-      }
-    }
-  }
+  const {
+    maxLimitPage,
+    minLimitPage,
+    handlePreviousPage,
+    handleNextPage
+  } = usePaginator(5, currentPage, setCurrentPage, totalPages)
 
   return (
     <div className='containerPaginator'>
@@ -33,7 +16,7 @@ export default function Paginator ({ totalPages, pages, currentPage, setCurrentP
       <div>
         {
         pages.map((page) => {
-          if (page < maxNumberPage + 1 && page > minNumberPage) {
+          if (page < maxLimitPage + 1 && page > minLimitPage) {
             return (
               <button
                 key={page}
