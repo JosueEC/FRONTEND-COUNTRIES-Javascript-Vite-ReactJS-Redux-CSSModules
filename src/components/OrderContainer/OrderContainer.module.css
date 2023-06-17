@@ -1,9 +1,25 @@
 .containerLists {
-  /* border: solid 2px purple; */
+  border: solid 2px purple;
   display: flex;
   width: 80%;
   height: 35px;
   margin-bottom: 1rem;
   gap: 1.5rem;
   animation: var(--fade-in);
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {} 
+
+/* Tablet */
+@media screen and (min-width: 767px) and (max-width: 1023px) {}
+
+/* Movil */
+@media screen and (max-width: 767px) {
+  .containerLists {
+    width: 90vw;
+    height: 125px;
+    flex-direction: column;
+    align-items: center;
+  }
 }

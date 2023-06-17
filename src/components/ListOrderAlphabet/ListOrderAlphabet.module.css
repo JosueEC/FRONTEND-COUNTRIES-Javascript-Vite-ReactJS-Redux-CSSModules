@@ -1,4 +1,5 @@
 .selectAlphabet {
+  border: solid 2px hotpink;
   font-size: 1.1rem;
   width: 180px;
   font-family: var(--button-font);
@@ -9,4 +10,20 @@
   border-radius: 0.3rem;
   cursor: pointer;
   transition: 0.4s;
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {} 
+
+/* Tablet */
+@media screen and (min-width: 767px) and (max-width: 1023px) {}
+
+/* Movil */
+@media screen and (max-width: 767px) {
+  .selectAlphabet {
+    width: 250px;
+    padding: 0.6rem;
+    font-size: 1.27rem;
+    text-align: center;
+  }
 }
