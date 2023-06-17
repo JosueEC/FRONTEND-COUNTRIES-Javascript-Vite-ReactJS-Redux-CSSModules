@@ -1,11 +1,8 @@
-// import React from 'react'
-import styles from './Landing.module.css'
-import earth from './assets/earth.png'
-
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../utils/constants'
-
 import ButtonAction from '../../components/ButtonAction/ButtonAction'
+import styles from './Landing.module.css'
+import earth from './assets/earth.png'
 
 export default function Landing () {
   return (
