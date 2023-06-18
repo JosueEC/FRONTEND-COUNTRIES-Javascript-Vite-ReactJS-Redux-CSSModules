@@ -1,10 +1,8 @@
 import { lazy, Suspense } from 'react'
-import LoaderSpinner from '../LoaderSpinner/LoaderSpinner'
-
 import { useFetch } from '../../hooks/useFetch'
 import { API } from '../../utils/constants'
+import LoaderSpinner from '../LoaderSpinner/LoaderSpinner'
 import './SelectorCountry.css'
-
 const SelectorBox = lazy(() => import('../SelectorBox/SelectorBox'))
 
 export default function SelectorCountry () {

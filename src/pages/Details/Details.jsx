@@ -1,13 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useFetch } from '../../hooks/useFetch'
 import { useParams } from 'react-router-dom'
 import { API } from '../../utils/constants'
-
 import FlagCountry from '../../components/FlagCountry/FlagCountry'
 import TagCountry from '../../components/TagCountry/TagCountry'
 import ContainerActivities from '../../components/ContainerActivities/ContainerActivities'
 import LoaderSpinner from '../../components/LoaderSpinner/LoaderSpinner'
-
 import styles from './Details.module.css'
 
 export default function Details () {

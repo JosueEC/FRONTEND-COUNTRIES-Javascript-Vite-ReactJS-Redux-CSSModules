@@ -1,16 +1,13 @@
 .containerLanding {
-  /* border: solid 2px indianred; */
   flex-direction: row;
   gap: 1rem;
 }
 
 .containerLanding .content {
-  /* border: solid 2px purple; */
-  animation: fadeIn 1s ease 0s 1 normal forwards;
+  animation: var(--fade-in);
 }
 
 .containerLanding .content .title {
-  /* border: solid 2px yellow; */
   font-size: 3rem;
   font-family: var(--paragraph-font);
   background: var(--degraded-background);
@@ -31,25 +28,12 @@
 }
 
 .containerLanding .containerImage {
-  /* border: solid 2px blue; */
-  animation: fadeIn 1s ease 0s 1 normal forwards;
+  animation: var(--fade-in);
 }
 
 .containerLanding .containerImage img {
   object-fit: fill;
   width: 40vw;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Tablet */

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom'
 import FlagCountry from '../FlagCountry/FlagCountry'
 import TagCountry from '../TagCountry/TagCountry'

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { usePaginator } from '../../hooks/usePaginator'
 import './Paginator.css'
 

@@ -1,8 +1,7 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { lazy, Suspense } from 'react'
 import { useSelector } from 'react-redux'
-import { getCountries } from '../../services/redux/actions'
 import { usePaginate } from '../../hooks/usePaginate'
+import { getCountries } from '../../services/redux/actions'
 import LoaderSpinner from '../LoaderSpinner/LoaderSpinner'
 import Paginator from '../Paginator/Paginator'
 import styles from './ContainerCards.module.css'

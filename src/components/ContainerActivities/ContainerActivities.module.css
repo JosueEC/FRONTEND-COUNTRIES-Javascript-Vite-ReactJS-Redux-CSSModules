@@ -1,5 +1,4 @@
 .containerCards {
-  /* border: solid 2px purple; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

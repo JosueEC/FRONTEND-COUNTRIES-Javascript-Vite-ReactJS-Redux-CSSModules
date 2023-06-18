@@ -3,7 +3,6 @@ import { useForm } from '../../hooks/useForm'
 import { validationForm } from '../../services/validators/formValidators'
 import SelectRange from '../../components/SelectRange/SelectRange'
 import SelectorCountry from '../../components/SelectorCountry/SelectorCountry'
-
 import styles from './FormNewActivity.module.css'
 
 const initialForm = {

@@ -1,10 +1,8 @@
 .containerNavbar {
-  /* border: solid 2px teal; */
   padding-bottom: 70px;
 }
 
 .toolbar {
-  /* border: solid 2px orange; */
   position: fixed;
   z-index: 3;
   width: 100vw;

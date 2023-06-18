@@ -1,5 +1,4 @@
 .sidebar {
-  /* border: solid 2px rebeccapurple; */
   position: absolute;
   z-index: 2;
   background-color: var(--element-black);

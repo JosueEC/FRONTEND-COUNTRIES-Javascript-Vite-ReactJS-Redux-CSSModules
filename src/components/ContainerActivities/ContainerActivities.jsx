@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { lazy, Suspense } from 'react'
 import LoaderSpinner from '../LoaderSpinner/LoaderSpinner'
 import styles from './ContainerActivities.module.css'

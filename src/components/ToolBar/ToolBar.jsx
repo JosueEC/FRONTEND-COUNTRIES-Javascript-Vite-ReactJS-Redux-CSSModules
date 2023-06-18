@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom'
 import { ROUTES } from '../../utils/constants'
 import styles from './ToolBar.module.css'

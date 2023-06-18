@@ -1,9 +1,7 @@
-/* eslint-disable react/prop-types */
 import { filterCountriesByContinent, getCountries } from '../../services/redux/actions'
 import { useDispatch } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
-
 import { ROUTES } from '../../utils/constants'
 import LoaderSpinner from '../LoaderSpinner/LoaderSpinner'
 import './SideBar.css'

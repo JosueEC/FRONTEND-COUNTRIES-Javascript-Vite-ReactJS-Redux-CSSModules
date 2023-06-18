@@ -1,5 +1,4 @@
 .containerSearchbar {
-  /* border: solid 2px palevioletred; */
   padding: 1rem;
   width: 100%;
   text-align: center;
@@ -8,7 +7,6 @@
 }
 
 .containerSearchbar .searchInput {
-  /* border: solid 2px seagreen; */
   background-color: var(--element-black);
   width: 700px;
   height: 33px;

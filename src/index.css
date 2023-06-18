@@ -14,7 +14,6 @@
   --label: #908E9B;
   --disabled: #E1DFE9;
 
-  --title-font: 'Khand', sans-serif;
   --paragraph-font: 'Lato', sans-serif;
   --button-font: 'Hindi', sans-serif;
 
@@ -65,7 +64,6 @@ section {
   justify-content: center;
   min-height: 100%;
   padding: 0 8rem;
-  /* border: solid 2px red; */
 }
 
 @keyframes fadeIn {

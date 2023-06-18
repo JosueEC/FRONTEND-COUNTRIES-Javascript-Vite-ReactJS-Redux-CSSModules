@@ -1,21 +1,18 @@
 .card {
-  /* border: solid 2px blue; */
   width: 280px;
   height: 390px;
   background-color: var(--element-black);
   border-radius: 0.3rem;
-  animation: fadeIn 1s ease 0s 1 normal forwards;
+  animation: var(--fade-in);
   color: var(--low-white);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .11);
 }
 
 .card .content {
-  /* border: solid 2px red; */
   padding: 0.5rem 1rem;
 }
 
 .card .content .title {
-  /* border: solid 2px yellowgreen; */
   text-transform: capitalize;
   font-family: var(--button-font);
   font-size: 1.7rem;
@@ -40,16 +37,4 @@
   color: var(--secondary-color);
   cursor: pointer;
   padding-left: 0.3rem;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

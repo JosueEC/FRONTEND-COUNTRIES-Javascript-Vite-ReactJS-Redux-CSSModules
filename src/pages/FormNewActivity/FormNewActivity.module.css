@@ -1,5 +1,4 @@
 .form {
-  /* border: solid 2px hotpink; */
   width: 100%;
   height: 600px;
   padding: 1rem;
@@ -10,7 +9,6 @@
 }
 
 .form .containerInputs {
-  /* border: solid 2px red; */
   background-color: var(--element-black);
   border-radius: 0.3rem;
   padding: 1rem;
@@ -19,7 +17,6 @@
 }
 
 .inputBox {
-  /* border: solid 2px purple; */
   position: relative;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -29,7 +26,6 @@
 }
 
 .inputBox input {
-  /* border: solid 2px orange; */
   width: 450px;
   background: none;
   color: var(--low-white);
@@ -81,12 +77,10 @@
 }
 
 .form .containerCountryOptions {
-  /* border: solid 2px aqua; */
   text-align: center;
 }
 
 .form .containerCountryOptions .labelSelector {
-  /* border: solid 2px greenyellow; */
   font-family: var(--paragraph-font);
   font-size: 1.2rem;
 }

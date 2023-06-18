@@ -1,5 +1,9 @@
 import { useDispatch } from 'react-redux'
-import { orderCountriesAtoZ, orderCountriesZtoA, getCountries } from '../../services/redux/actions'
+import {
+  orderCountriesAtoZ,
+  orderCountriesZtoA,
+  getCountries
+} from '../../services/redux/actions'
 import styles from './ListOrderAlphabet.module.css'
 
 export default function ListOrderAlphabet () {

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import styles from './SelectRange.module.css'
 
 export default function SelectRange ({ name, handleChange, handleBlur, selectText, options }) {

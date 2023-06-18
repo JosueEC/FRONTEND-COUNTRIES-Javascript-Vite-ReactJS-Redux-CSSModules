@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-/* eslint-disable react/prop-types */
 import FlagCountry from '../FlagCountry/FlagCountry'
 import TagCountry from '../TagCountry/TagCountry'
 import styles from './CardActivity.module.css'

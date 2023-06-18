@@ -1,5 +1,4 @@
 .containerDetails {
-  /* border: solid 2px hotpink; */
   padding: 1rem;
   display: flex;
   border-radius: 0.3rem;
@@ -8,7 +7,6 @@
 }
 
 .containerDetails .countryInformation {
-  /* border: solid 2px purple; */
   width: 320px;
   height: 450px;
   background-color: var(--element-black);
