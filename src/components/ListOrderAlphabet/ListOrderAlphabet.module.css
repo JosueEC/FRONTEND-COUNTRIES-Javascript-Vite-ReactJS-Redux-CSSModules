@@ -21,3 +21,11 @@
     text-align: center;
   }
 }
+
+/* Tablet */
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .selectAlphabet {
+    width: 240px;
+    font-size: 1.5rem;
+  }
+}
