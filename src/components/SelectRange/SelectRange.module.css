@@ -1,0 +1,23 @@
+.selectRange {
+  /* border: solid 2px hotpink; */
+  font-size: 1.1rem;
+  width: 180px;
+  font-family: var(--button-font);
+  font-weight: bold;
+  text-align: center;
+  background-color: var(--element-black);
+  color: var(--label);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+/* Movil */
+@media screen and (max-width: 767px) {
+  .selectRange {
+    width: 250px;
+    padding: 0.6rem;
+    font-size: 1.27rem;
+    text-align: center;
+  }
+}

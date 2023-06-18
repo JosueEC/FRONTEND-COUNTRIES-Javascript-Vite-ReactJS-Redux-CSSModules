@@ -18,7 +18,7 @@ export function useForm (initialForm, validateForm) {
     const { name, value } = event.target
     setForm({
       ...form,
-      [name]: value
+      [name]: value.toLowerCase()
     })
   }
 

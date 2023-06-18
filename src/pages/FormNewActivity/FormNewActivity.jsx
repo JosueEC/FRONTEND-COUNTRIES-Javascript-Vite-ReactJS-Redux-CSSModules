@@ -1,6 +1,7 @@
 import { Toaster } from 'sonner'
 import { useForm } from '../../hooks/useForm'
 import { validationForm } from '../../services/validators/formValidators'
+import SelectRange from '../../components/SelectRange/SelectRange'
 import SelectorCountry from '../../components/SelectorCountry/SelectorCountry'
 
 import styles from './FormNewActivity.module.css'
@@ -40,28 +41,6 @@ export default function FormNewActivity () {
           </div>
           <div className={styles.inputBox}>
             <input
-              type='number'
-              name='difficulty'
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={form.difficulty} required
-            />
-            <label htmlFor='difficulty'>Difficulty of the Activity</label>
-            {(errors.difficulty) && <span className={styles.messageError}>{errors.difficulty}</span>}
-          </div>
-          <div className={styles.inputBox}>
-            <input
-              type='number'
-              name='duration'
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={form.duration} required
-            />
-            <label htmlFor='duration'>Activity Duration</label>
-            {(errors.duration) && <span className={styles.messageError}>{errors.duration}</span>}
-          </div>
-          <div className={styles.inputBox}>
-            <input
               type='text'
               name='image'
               onChange={handleChange}
@@ -72,13 +51,34 @@ export default function FormNewActivity () {
             {(errors.image) && <span className={styles.messageError}>{errors.image}</span>}
           </div>
           <div className={styles.inputBox}>
-            <input
-              type='text'
+            <SelectRange
+              name='difficulty'
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              selectText='Select Activity Difficult'
+              options={[1, 2, 3, 4, 5]}
+              required
+            />
+            {(errors.difficulty) && <span className={styles.messageError}>{errors.difficulty}</span>}
+          </div>
+          <div className={styles.inputBox}>
+            <SelectRange
+              name='duration'
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              selectText='Select Activity Duration'
+              options={[1, 2, 3, 4, 5]}
+              required
+            />
+            {(errors.duration) && <span className={styles.messageError}>{errors.duration}</span>}
+          </div>
+          <div className={styles.inputBox}>
+            <SelectRange
               name='season'
-              placeholder='verano, otoño, invierno, primavera'
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={form.season} required
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              selectText='Select Activity Season'
+              options={['verano', 'otoño', 'invierno', 'primavera']}
             />
             {(errors.season) && <span className={styles.messageError}>{errors.season}</span>}
           </div>
