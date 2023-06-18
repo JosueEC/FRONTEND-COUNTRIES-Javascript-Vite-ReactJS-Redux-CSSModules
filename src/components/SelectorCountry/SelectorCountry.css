@@ -34,7 +34,6 @@
 /* Tablet */
 @media screen and (min-width: 767px) and (max-width: 1023px) {
   section {
-    border: solid 2px greenyellow;
     padding: 0 3rem;
   }
   .containerOptions {
