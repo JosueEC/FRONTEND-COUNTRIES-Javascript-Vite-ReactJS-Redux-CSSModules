@@ -52,11 +52,33 @@
   }
 }
 
-/* Desktop */
-@media screen and (min-width: 1024px) {} 
-
 /* Tablet */
-@media screen and (min-width: 767px) and (max-width: 1023px) {}
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  section {
+    padding: 0 7rem;
+    height: 90vh;
+  }
+
+  .containerLanding {
+    flex-direction: column-reverse;
+  }
+
+  .containerLanding .content .title {
+    font-size: 6rem;
+  }
+
+  .containerLanding .content .slogan {
+    font-size: 3rem;
+  }
+
+  .containerLanding .content p {
+    font-size: 2rem;
+  }
+
+  .containerLanding .containerImage img {
+    width: 50vw;
+  }
+}
 
 /* Movil */
 @media screen and (max-width: 767px) {
@@ -80,15 +102,3 @@
     width: 75vw;
   }
 }
-
-/* MOVILES*/
-/* @media only screen and (min-width: 280px) and (max-width: 540px) {} */
-
-/* SURFACE DUO (CASO ESPECIAL)*/
-/* @media only screen and (min-width: 540px) and (max-width: 768px) {} */
-
-/* IPADS VERTICALES*/
-/* @media only screen and (min-width:768px) and (max-width: 1024px) {} */
-
-/* IPADS HORIZONTALES*/
-/* @media only screen and (min-width:1024px) and (max-width:1280px) {} */
