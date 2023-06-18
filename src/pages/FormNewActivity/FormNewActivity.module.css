@@ -102,9 +102,8 @@
   }
 
   .form .containerInputs {
-    margin-top: 300px;
     width: 90vw;
-    height: 1200px;
+    height: 90vh;
     margin-bottom: 2rem;
   }
 
@@ -114,5 +113,19 @@
 
   .form .containerCountryOptions {
     width: 90vw;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .form {
+    height: 90vh;
+    margin-top: 2.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form .containerInputs {
+    height: 60vh;
   }
 }
