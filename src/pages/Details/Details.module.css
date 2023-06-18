@@ -31,3 +31,12 @@
     flex-direction: column;
   }
 }
+
+/* Tablet */
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .containerDetails {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2.5rem;
+  }
+}
