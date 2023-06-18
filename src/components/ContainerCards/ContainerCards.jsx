@@ -2,7 +2,7 @@
 import { lazy, Suspense } from 'react'
 import { useSelector } from 'react-redux'
 import { getCountries } from '../../services/redux/actions'
-import { usePaginate } from '../../hooks/usePaginateCountries'
+import { usePaginate } from '../../hooks/usePaginate'
 import LoaderSpinner from '../LoaderSpinner/LoaderSpinner'
 import Paginator from '../Paginator/Paginator'
 import styles from './ContainerCards.module.css'
