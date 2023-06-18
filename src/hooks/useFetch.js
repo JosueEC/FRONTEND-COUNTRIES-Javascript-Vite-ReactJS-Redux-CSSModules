@@ -12,7 +12,6 @@ export function useFetch (URL) {
         return response.json()
       })
       .then((results) => {
-        console.info('fetch-data-API')
         setData(results.data)
         setIsLoading(false)
       })

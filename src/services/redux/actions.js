@@ -1,5 +1,4 @@
 import { API } from '../../utils/constants'
-import * as log from '../../utils/logger'
 
 export const GET_COUNTRIES = 'GET_COUNTRIES'
 export const GET_COUNTRIES_FILTERED = 'GET_COUNTRIES_FILTERED'
@@ -23,7 +22,6 @@ const getCountries = () => {
         return response.json()
       })
       .then((results) => {
-        console.info('fetch-all-countries')
         dispatch({ type: GET_COUNTRIES, payload: results.data })
       })
       .catch((error) => console.error(error.message))
@@ -37,7 +35,6 @@ const getCountriesByName = (countryName) => {
     fetch(URL)
       .then((response) => response.json())
       .then((result) => {
-        log.actionFetch('fetch-countries-by-name')
         dispatch({ type: GET_COUNTRIES_BY_NAME, payload: result.data })
       })
       .catch((error) => {
@@ -60,7 +57,7 @@ const postFormNewActivity = (form) => {
       .then((response) => response.json())
       .then((results) => {
         if (results.status === 'CREATED') console.info('The activity has been created')
-        else console.error('Something went wrong, try again later.')
+        else alert('Something went wrong, try again later.')
       })
       .catch((error) => {
         console.error(error.message)
@@ -76,7 +73,6 @@ const getCountriesFiltered = () => {
 
 const filterCountriesByContinent = (continent) => {
   return function (dispatch) {
-    console.info(`filter-countries-${continent}`)
     dispatch({ type: FILTER_COUNTRIES_BY_CONTINENT, payload: continent })
   }
 }

@@ -19,7 +19,6 @@ export const usePaginate = (data, getFunction, elementsPerPage) => {
       dispatch(getFunction())
     }
     setCurrentPage(1)
-    console.info(currentPage)
   }, [data])
 
   return {
