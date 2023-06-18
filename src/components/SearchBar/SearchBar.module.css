@@ -69,3 +69,26 @@
     margin-bottom: 1rem;
   }
 }
+
+/* Tablet */
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+  .containerSearchbar {
+    margin-top: 2rem;
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .containerSearchbar .searchInput {
+    height: 50px;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .containerSearchbar .button {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+}
