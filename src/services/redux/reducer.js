@@ -1,5 +1,6 @@
 import {
   GET_COUNTRIES,
+  GET_COUNTRIES_FILTERED,
   GET_COUNTRIES_BY_NAME,
   FILTER_COUNTRIES_BY_CONTINENT,
   ORDER_COUNTRIES_HIGHER_POPULATION,
@@ -13,6 +14,7 @@ import {
 const initialState = {
   countries: [],
   auxCountries: [],
+  countriesFiltered: [],
   selectedCountriesForm: []
 }
 
@@ -29,10 +31,16 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         countries: action.payload
       }
+    case GET_COUNTRIES_FILTERED:
+      return {
+        ...state,
+        countries: [...state.countriesFiltered]
+      }
     case FILTER_COUNTRIES_BY_CONTINENT:
       return {
         ...state,
-        countries: [...state.auxCountries].filter((country) => country.continent === action.payload)
+        countries: [...state.auxCountries].filter((country) => country.continent === action.payload),
+        countriesFiltered: [...state.countries]
       }
     case ORDER_COUNTRIES_HIGHER_POPULATION:
       return {

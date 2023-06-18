@@ -2,6 +2,7 @@ import { API } from '../../utils/constants'
 import * as log from '../../utils/logger'
 
 export const GET_COUNTRIES = 'GET_COUNTRIES'
+export const GET_COUNTRIES_FILTERED = 'GET_COUNTRIES_FILTERED'
 export const GET_COUNTRIES_BY_NAME = 'GET_COUNTRIES_BY_NAME'
 export const FILTER_COUNTRIES_BY_CONTINENT = 'FILTER_COUNTRIES_BY_CONTINENT'
 export const ORDER_COUNTRIES_HIGHER_POPULATION = 'ORDER_COUNTRIES_HIGHER_POPULATION'
@@ -67,6 +68,12 @@ const postFormNewActivity = (form) => {
   }
 }
 
+const getCountriesFiltered = () => {
+  return function (dispatch) {
+    dispatch({ type: GET_COUNTRIES_FILTERED })
+  }
+}
+
 const filterCountriesByContinent = (continent) => {
   return function (dispatch) {
     console.info(`filter-countries-${continent}`)
@@ -116,6 +123,7 @@ const removeCountryForm = (countryID) => {
 
 export {
   getCountries,
+  getCountriesFiltered,
   getCountriesByName,
   postFormNewActivity,
   filterCountriesByContinent,

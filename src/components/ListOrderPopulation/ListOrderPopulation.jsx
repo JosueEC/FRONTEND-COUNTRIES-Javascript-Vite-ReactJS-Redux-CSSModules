@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import {
   orderCountriesHigherPopulation,
   orderCountriesLowerPopulation,
-  getCountries
+  getCountriesFiltered
 } from '../../services/redux/actions'
 import styles from './ListOrderPopulation.module.css'
 
@@ -20,7 +20,7 @@ export default function ListOrderPopulation () {
         dispatch(orderCountriesLowerPopulation())
         break
       default:
-        dispatch(getCountries())
+        dispatch(getCountriesFiltered())
         break
     }
   }
