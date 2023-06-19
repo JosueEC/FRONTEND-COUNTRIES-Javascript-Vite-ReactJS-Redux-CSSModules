@@ -1,6 +1,3 @@
-import dotenv from 'dotenv'
-dotenv.config()
-
 const ROUTES = Object.freeze({
   LANDING: '/',
   HOME: '/home',
@@ -10,7 +7,7 @@ const ROUTES = Object.freeze({
 })
 
 const API = Object.freeze({
-  DOMAIN: process.env.REACT_APP_API
+  DOMAIN: 'http://localhost:3001'
 })
 
 export {
