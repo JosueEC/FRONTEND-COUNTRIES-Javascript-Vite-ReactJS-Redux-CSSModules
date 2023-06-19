@@ -18,6 +18,9 @@ export function useFetch (URL) {
         console.error(error.message)
         setIsLoading(false)
       })
+    return function clearData () {
+      setData([])
+    }
   }, [])
 
   return { data, isLoading }
