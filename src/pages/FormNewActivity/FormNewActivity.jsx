@@ -56,7 +56,6 @@ export default function FormNewActivity () {
               handleBlur={handleBlur}
               selectText='Select Activity Difficult'
               options={[1, 2, 3, 4, 5]}
-              value={form.difficulty}
               required
             />
             {(errors.difficulty) && <span className={styles.messageError}>{errors.difficulty}</span>}
@@ -68,7 +67,6 @@ export default function FormNewActivity () {
               handleBlur={handleBlur}
               selectText='Select Activity Duration'
               options={[1, 2, 3, 4, 5]}
-              value={form.duration}
               required
             />
             {(errors.duration) && <span className={styles.messageError}>{errors.duration}</span>}
@@ -79,7 +77,6 @@ export default function FormNewActivity () {
               handleChange={handleChange}
               handleBlur={handleBlur}
               selectText='Select Activity Season'
-              value='Select Activity Season'
               options={['verano', 'otoño', 'invierno', 'primavera']}
             />
             {(errors.season) && <span className={styles.messageError}>{errors.season}</span>}
