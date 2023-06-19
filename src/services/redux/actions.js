@@ -1,4 +1,5 @@
 import { API } from '../../utils/constants'
+import { handlePostResponse } from '../handlers/handlePostResponse'
 
 export const GET_COUNTRIES = 'GET_COUNTRIES'
 export const GET_COUNTRIES_FILTERED = 'GET_COUNTRIES_FILTERED'
@@ -56,8 +57,7 @@ const postFormNewActivity = (form) => {
     fetch(`${API.DOMAIN}/activities`, options)
       .then((response) => response.json())
       .then((results) => {
-        if (results.status === 'CREATED') console.info('The activity has been created')
-        else alert('Something went wrong, try again later.')
+        handlePostResponse(results)
       })
       .catch((error) => {
         console.error(error.message)

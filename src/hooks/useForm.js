@@ -20,6 +20,7 @@ export function useForm (initialForm, validateForm) {
       ...form,
       [name]: value.toLowerCase()
     })
+    setErrors(validateForm(form))
   }
 
   function handleBlur (event) {
@@ -35,15 +36,15 @@ export function useForm (initialForm, validateForm) {
     } else {
       if (Object.keys(errors).length === 0 && selectedCountries.length !== 0) {
         dispatch(postFormNewActivity(completeForm))
-        const promise = () => new Promise((resolve) => setTimeout(resolve, 2000))
-
-        toast.promise(promise, {
-          loading: 'Creating Activity...',
-          success: () => {
-            return 'The activity has been created'
-          },
-          error: 'Something went wrong, try again later.'
+        setForm({
+          name: '',
+          difficulty: 0,
+          duration: 0,
+          season: '',
+          image: ''
         })
+        setErrors({})
+        document.getElementById('formNewActivity').reset()
       } else {
         toast.error('There are wrong fields in the form')
       }
