@@ -1,6 +1,8 @@
 .selectRange {
   font-size: 1.1rem;
-  width: 180px;
+  width: 250px;
+  height: 30px;
+  border: 1px solid var(--label);
   font-family: var(--button-font);
   font-weight: bold;
   text-align: center;
