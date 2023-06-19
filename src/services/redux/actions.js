@@ -1,4 +1,5 @@
 import { API } from '../../utils/constants'
+import { handleGetResponse } from '../handlers/handleGetResponse'
 import { handlePostResponse } from '../handlers/handlePostResponse'
 
 export const GET_COUNTRIES = 'GET_COUNTRIES'
@@ -18,12 +19,9 @@ const getCountries = () => {
 
   return function (dispatch) {
     fetch(URL)
-      .then((response) => {
-        if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`)
-        return response.json()
-      })
+      .then((response) => response.json())
       .then((results) => {
-        dispatch({ type: GET_COUNTRIES, payload: results.data })
+        handleGetResponse(results, dispatch)
       })
       .catch((error) => console.error(error.message))
   }
