@@ -1,4 +1,4 @@
-import { toast } from 'sonner'
+// import { toast } from 'sonner'
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { postFormNewActivity } from '../services/redux/actions'
@@ -32,7 +32,8 @@ export function useForm (initialForm, validateForm) {
     event.preventDefault()
     setErrors(validateForm(form))
     if (selectedCountries.length === 0) {
-      toast.error('You must select at least one country')
+      // toast.error('You must select at least one country')
+      alert('You must select at least one country')
     } else {
       if (Object.keys(errors).length === 0 && selectedCountries.length !== 0) {
         dispatch(postFormNewActivity(completeForm))
@@ -46,7 +47,8 @@ export function useForm (initialForm, validateForm) {
         setErrors({})
         document.getElementById('formNewActivity').reset()
       } else {
-        toast.error('There are wrong fields in the form')
+        // toast.error('There are wrong fields in the form')
+        alert('There are wrong fields in the form')
       }
     }
   }
